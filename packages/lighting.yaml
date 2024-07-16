@@ -1,0 +1,700 @@
+###############################################################################
+#   @author         :   SchmittyD
+#   @created date   :   03/07/2024 (AEST)
+#   @edited date    :   06/07/2024 (AEST)
+#   @package        :   Lighting
+#   @description    :   Lighting groups, switches, automations, etc.
+###############################################################################
+
+##### Light groups #####
+light:
+#### Internal ####
+  - platform: group
+    name: Internal Lights
+    unique_id: group_internal
+    entities:
+  #    - light.downlight_alcove
+  #    - light.downlight_bedroom
+  #    - light.downlight_dining_room
+      - light.downlight_front_foyer
+      - light.downlight_hallway_1
+      - light.downlight_hallway_2
+  #    - light.downlight_kitchen
+  #    - light.downlight_kitchen_pantry
+  #    - light.downlight_kitchen_sink
+  #    - light.downlight_laundry
+      - light.downlight_lounge_room_1
+      - light.downlight_lounge_room_2
+  #    - light.downlight_office
+  #    - light.strip_kitchen_1
+  #    - light.strip_kitchen_2
+  #    - light.strip_kitchen_3
+  #    - light.strip_office_1
+  #    - light.strip_office_2
+  #    - light.strip_office_3
+  #    - light.pendant_dining_room
+### Internal Downlights ###
+  - platform: group
+    name: Internal Downlights
+    unique_id: lights_downlights_internal
+    entities:
+  #    - light.downlight_alcove
+  #    - light.downlight_bedroom
+  #    - light.downlight_dining_room
+      - light.downlight_front_foyer
+      - light.downlight_hallway_1
+      - light.downlight_hallway_2
+  #    - light.downlight_kitchen
+  #    - light.downlight_kitchen_pantry
+  #    - light.downlight_kitchen_sink
+  #    - light.downlight_laundry
+      - light.downlight_lounge_room_1
+      - light.downlight_lounge_room_2
+  #    - light.downlight_office
+### Internal Pendant Lights ###
+  #- platform: group
+  #  name: Internal Pendant Lights
+  #  unique_id: lights_pendant_internal
+  #  entities:
+  #    - light.pendant_dining_room
+### Internal Strip Lights ###
+  #- platform: group
+  #  name: Internal Strip Lighting
+  #  unique_id: lights_strip_internal
+  #  entities:
+  #    - light.strip_garage_1
+  #    - light.strip_garage_2
+  #    - light.strip_garage_3
+  #    - light.strip_kitchen_1
+  #    - light.strip_kitchen_2
+  #    - light.strip_kitchen_3
+  #    - light.strip_office_1
+  #    - light.strip_office_2
+  #    - light.strip_office_3
+  #    - light.strip_
+  #    - light.strip_
+  #    - light.strip_
+  #    - light.strip_
+
+## Front Foyer ##
+  - platform: group
+    name: Front Foyer Lights
+    unique_id: lights_front_foyer
+    entities:
+      - light.downlight_front_foyer
+# Front Foyer Downlights #
+  - platform: group
+    name: Front Foyer Downlights
+    unique_id: lights_downlights_front_foyer
+    entities:
+      - light.downlight_front_foyer
+
+## Lounge Room ##
+  - platform: group
+    name: Lounge Room Lights
+    unique_id: lights_lounge_room
+    entities:
+      - light.downlight_lounge_room_1
+      - light.downlight_lounge_room_2
+# Lounge Room Downlights #
+  - platform: group
+    name: Lounge Room Downlights
+    unique_id: lights_downlights_lounge_room
+    entities:
+      - light.downlight_lounge_room_1
+      - light.downlight_lounge_room_2
+
+## Dining Room ##
+  #- platform: group
+  #  name: Dining Room Lights
+  #  unique_id: lights_dining_room
+  #  entities:
+  #    - light.downlight_dining_room
+  #    - light.pendant_dining_room
+# Dining Room Downlights #
+  #- platform: group
+  #  name: Dining Room Downlights
+  #  unique_id: lights_downlights_dining_room
+  #  entities:
+  #    - light.downlight_dining_room
+# Dining Room Pendant Lights #
+  #- platform: group
+  #  name: Dining Room Pendant Lights
+  #  unique_id: lights_pendants_dining_room
+  #  entities:
+  #    - light.pendant_dining_room
+
+## Kitchen ##
+  #- platform: group
+  #  name: Kitchen Lights
+  #  unique_id: lights_kitchen
+  #  entities:
+  #    - light.downlight_kitchen
+  #    - light.downlight_kitchen_pantry
+  #    - light.downlight_kitchen_sink
+  #    - light.strip_kitchen_1
+  #    - light.strip_kitchen_2
+  #    - light.strip_kitchen_3
+# Kitchen Downlights #
+  #- platform: group
+  #  name: Kitchen Downlights
+  #  unique_id: lights_downlights_kitchen
+  #  entities:
+  #    - light.downlight_kitchen
+  #    - light.downlight_kitchen_pantry
+  #    - light.downlight_kitchen_sink
+# Kitchen Strip Lights #
+  #- platform: group
+  #  name: Kitchen Strip Lighting
+  #  unique_id: lights_strips_kitchen
+  #  entities:
+  #    - light.strip_kitchen_1
+  #    - light.strip_kitchen_2
+  #    - light.strip_kitchen_3
+
+## Hallway ##
+  - platform: group
+    name: Hallway Lights
+    unique_id: lights_hallway
+    entities:
+      - light.downlight_hallway_1
+      - light.downlight_hallway_2
+# Hallway Downlights #
+  - platform: group
+    name: Hallway Downlights
+    unique_id: lights_downlights_hallway
+    entities:
+      - light.downlight_hallway_1
+      - light.downlight_hallway_2
+
+## Alcove ##
+  #- platform: group
+  #  name: Alcove Lights
+  #  unique_id: lights_alcove
+  #  entities:
+  #    - light.downlight_alcove
+# Alcove Downlights #
+  #- platform: group
+  #  name: Alcove Downlights
+  #  unique_id: lights_downlights_alcove
+  #  entities:
+  #    - light.downlight_alcove
+
+## Toilet ##
+  #- platform: group
+  #  name: Toilet Lights
+  #  unique_id: lights_toilet
+  #  entities:
+  #    - light.downlight_toilet
+# Toilet Downlights #
+  #- platform: group
+  #  name: Toilet Downlights
+  #  unique_id: lights_downlights_toilet
+  #  entities:
+  #    - light.downlight_toilet
+
+## Laundry ##
+  #- platform: group
+  #  name: Laundry Lights
+  #  unique_id: lights_laundry
+  #  entities:
+  #    - light.downlight_laundry
+# Laundry Downlights #
+  #- platform: group
+  #  name: Laundry Downlights
+  #  unique_id: lights_downlights_laundry
+  #  entities:
+  #    - light.downlight_laundry
+
+## Bedroom ##
+  #- platform: group
+  #  name: Bedroom Lights
+  #  unique_id: lights_bedroom
+  #  entities:
+  #    - light.downlight_bedroom
+  #    - light.lamp_1_bedroom
+  #    - light.lamp_2_bedroom
+# Bedroom Downlights #
+  #- platform: group
+  #  name: Bedroom Downlights
+  #  unique_id: lights_downlights_bedroom
+  #  entities:
+  #    - light.downlight_bedroom
+# Bedroom Lamps #
+  #- platform: group
+  #  name: Bedroom Lamps
+  #  unique_id: lights_lamps_bedroom
+  #  entities:
+  #    - light.lamp_1_bedroom
+  #    - light.lamp_2_bedroom
+
+## Office ##
+  - platform: group
+    name: Office Lights
+    unique_id: lights_office
+    entities:
+  #    - light.downlight_office
+  #    - light.strip_office_1
+  #    - light.strip_office_2
+  #    - light.strip_office_3
+      - light.studio_office_green_screen
+      - light.studio_office_fill_light
+      - light.studio_office_key_light
+# Office Downlights #
+  #- platform: group
+  #  name: Office Downlights
+  #  unique_id: lights_downlights_office
+  #  entities:
+  #    - light.downlight_office
+# Office Strip Lights #
+  #- platform: group
+  #  name: Office Strip Lighting
+  #  unique_id: lights_strips_office
+  #  entities:
+  #    - light.strip_office_1
+  #    - light.strip_office_2
+  #    - light.strip_office_3
+# Office Studio Lights #
+  - platform: group
+    name: Office Studio Lights
+    unique_id: lights_studio_office
+    entities:
+      - light.studio_office_green_screen
+      - light.studio_office_fill_light
+      - light.studio_office_key_light
+
+#### External ####
+  - platform: group
+    name: External Lights
+    unique_id: lights_external
+    entities:
+      - light.batten_garage
+      - light.downlight_porch_front_1
+      - light.downlight_porch_front_2
+  #    - light.downlight_porch_rear_1
+  #    - light.downlight_porch_rear_2
+  #    - light.floodlight_driveway
+  #    - light.floodlight_garage_1
+  #    - light.floodlight_garage_2
+### External Batten Lights ###
+  - platform: group
+    name: External Batten Lights
+    unique_id: lights_battens_external
+    entities:
+      - light.batten_garage
+### External Downlights ###
+  - platform: group
+    name: External Downlights
+    unique_id: lights_downlights_external
+    entities:
+      - light.downlight_porch_front_1
+      - light.downlight_porch_front_2
+  #    - light.downlight_porch_rear_1
+  #    - light.downlight_porch_rear_2
+
+## Driveway ##
+  #  name: Driveway Lights
+  #  unique_id: lights_driveway
+  #  entities:
+  #    - light.floodlight_driveway
+# Driveway Floodlights #
+  #- platform: group
+  #  name: Driveway Floodlights
+  #  unique_id: lights_floodlights_driveway
+  #  entities:
+  #    - light.floodlight_driveway
+
+## Garage ##
+  - platform: group
+    name: Garage Lights
+    unique_id: lights_garage
+    entities:
+      - light.batten_garage
+  #    - light.floodlight_garage_1
+  #    - light.floodlight_garage_2
+  #    - light.strip_garage_1
+  #    - light.strip_garage_2
+  #    - light.strip_garage_3
+# Garage Downlights #
+  - platform: group
+    name: Garage Batten Lights
+    unique_id: lights_battens_garage
+    entities:
+      - light.batten_garage
+# Garage Floodlights #
+  #- platform: group
+  #  name: Garage Floodlights
+  #  unique_id: lights_floodlights_garage
+  #  entities:
+  #    - light.floodlight_garage_1
+  #    - light.floodlight_garage_2
+# Garage Strip Lights #
+  #  name: Garage Strip Lights
+  #  unique_id: lights_strips_garage
+  #  entities:
+  #    - light.strip_garage_1
+  #    - light.strip_garage_2
+  #    - light.strip_garage_3
+
+#### Porch ####
+  - platform: group
+    name: Porch Lights
+    unique_id: lights_porch
+    entities:
+      - light.downlight_porch_front_1
+      - light.downlight_porch_front_2
+      - light.downlight_porch_front_1
+      - light.downlight_porch_front_2
+### Porch Downlights ###
+  - platform: group
+    name: Porch Downlights
+    unique_id: lights_downlights_porch
+    entities:
+      - light.downlight_porch_front_1
+      - light.downlight_porch_front_2
+      - light.downlight_porch_front_1
+      - light.downlight_porch_front_2
+
+## Front Porch ##
+  - platform: group
+    name: Front Porch Lights
+    unique_id: lights_porch_front
+    entities:
+      - light.downlight_porch_front_1
+      - light.downlight_porch_front_2
+# Front Porch Downlights #
+  - platform: group
+    name: Front Porch Downlights
+    unique_id: lights_downlights_porch_front
+    entities:
+      - light.downlight_porch_front_1
+      - light.downlight_porch_front_2
+
+## Rear Porch ##
+  #- platform: group
+  #  name: Rear Porch Lights
+  #  unique_id: lights_porch_rear
+  #  entities:
+  #    - light.downlight_porch_rear_1
+  #    - light.downlight_porch_rear_2
+# Rear Porch Downlights #
+  #- platform: group
+  #  name: Rear Porch Downlights
+  #  unique_id: lights_downlights_porch_rear
+  #  entities:
+  #    - light.downlight_porch_rear_1
+  #    - light.downlight_porch_rear_2
+
+## Main Zone ##
+  #- platform: group
+  #  name: Main Zone Lights
+  #  unique_id: lights_main_zone
+  #  entities:
+  #    - light.downlight_bedroom
+      - light.downlight_front_foyer
+      - light.downlight_hallway_1
+      - light.downlight_hallway_2
+      - light.downlight_lounge_room_1
+      - light.downlight_lounge_room_2
+# Main Zone Downlights #
+  #- platform: group
+  #  name: Rear Porch Downlights
+  #  unique_id: lights_downlights_porch_rear
+  #  entities:
+  #    - light.downlight_bedroom
+      - light.downlight_front_foyer
+      - light.downlight_hallway_1
+      - light.downlight_hallway_2
+      - light.downlight_lounge_room_1
+      - light.downlight_lounge_room_2
+
+### Batten Lights ###
+  - platform: group
+    name: Batten Lights
+    unique_id: lights_battens
+    entities:
+      - light.batten_garage
+
+### Downlights ###
+  - platform: group
+    name: Downlights
+    unique_id: lights_downlights
+    entities:
+  #    - light.downlight_alcove
+  #    - light.downlight_bedroom
+  #    - light.downlight_dining_room
+      - light.downlight_front_foyer
+      - light.downlight_hallway_1
+      - light.downlight_hallway_2
+  #    - light.downlight_kitchen
+  #    - light.downlight_kitchen_pantry
+  #    - light.downlight_kitchen_sink
+  #    - light.downlight_laundry
+      - light.downlight_lounge_room_1
+      - light.downlight_lounge_room_2
+  #    - light.downlight_office
+      - light.downlight_porch_front_1
+      - light.downlight_porch_front_2
+  #    - light.downlight_porch_rear_1
+  #    - light.downlight_porch_rear_2
+
+### Floodlights ###
+  #- platform: group
+  #  name: Flood Lights
+  #  unique_id: lights_floodlights
+  #  entities:
+  #    - light.lights_floodlight_driveway
+  #    - light.lights_floodlight_garage
+
+### Pendant Lights ###
+  #- platform: group
+  #  name: Pendant Lights
+  #  unique_id: lights_pendant
+  #  entities:
+  #    - light.lights_pendants_internal
+
+### Strip Lights ###
+  #- platform: group
+  #  name: Strip Lighting
+  #  unique_id: lights_strips
+  #  entities:
+  #    - light.lights_strips_external
+  #    - light.lights_strips_internal
+
+
+
+
+##### Switches #####
+#switch:
+####  ####
+
+####  ####
+
+
+
+
+##### Input boolean templates #####
+#### Presence ####
+input_boolean:
+  - platform: template
+    name: "Presence"
+    #device_class: door # does not work since copy from bin sens.
+    value_template: >-
+      {% if is_state("binary_sensor.presence", "on") %}
+        Home
+      {% else %}
+        Away
+      {% endif %}
+    icon_template: >-
+      {% if is_state("binary_sensor.presence", "on") %}
+        mdi:home
+      {% else %}
+        mdi:home-outline
+      {% endif %}####  ####
+      - platform: template
+
+#### Adaptive Lighting Presence ####
+  - platform: template
+    name: "Adaptive Lighting Presence"
+    #device_class: door # does not work since copy from bin sens.
+    value_template: >-
+      {% if is_state("binary_sensor.adaptive_lighting_presence", "on") %}
+        Home
+      {% else %}
+        Away
+      {% endif %}
+    icon_template: >-
+      {% if is_state("binary_sensor.adaptive_lighting_presence", "on") %}
+        mdi:home, rgb(251, 210, 41)
+      {% else %}
+        mdi:home-outline, rgb(251, 210, 41)
+      {% endif %}
+
+
+
+
+##### Binary sensor templates #####
+binary_sensor:
+####  ####
+#  - platform: template
+#    presence:
+#      friendly_name: Presence
+#      value_template: |
+#            {{ is_state("binary_sensor.", "on") }}
+#      icon_template: |
+#        {% if is_state("binary_sensor.", "on") %}
+#        " mdi:", "rgb(251, 210, 41)"
+#        {% else %}
+#        " mdi:"
+#        {% endif %}
+
+
+
+
+##### Automations #####
+automation:
+#### Hue Tap/Dial Swtich (Front Foyer) - Button 1 ####
+
+### Button 1 ###
+  - alias: Hue Tap/Dial Swtich (Front Foyer) - Button 1
+    id: hue_tap_dial_front_foyer_button_1
+    description: ""
+    trigger:
+      - platform: state
+        entity_id:
+          - event.button_front_foyer_1
+        attribute: event_type
+        from: short_release
+    condition: []
+    action:
+      - service: light.toggle
+        metadata: {}
+        data: {}
+        target:
+          entity_id: light.garage_lights
+    mode: single
+
+    ### Button 2 ###
+  - alias: Hue Tap/Dial Switch (Front Foyer) - Button 2
+    id: hue_tap_dial_front_foyer_button_2
+    description: ''
+    trigger:
+    - platform: state
+      entity_id:
+      - event.button_front_foyer_2
+      attribute: event_type
+      from: short_release
+    condition: []
+    action:
+    - service: light.toggle
+      metadata: {}
+      data: {}
+      target:
+        entity_id: light.front_porch_downlights
+    mode: single
+
+### Button 3 ###
+  - alias: Hue Tap/Dial Swtich (Front Foyer) - Button 3
+    id: hue_tap_dial_front_foyer_button_3
+    description: ''
+    trigger:
+    - platform: state
+      entity_id:
+      - event.button_front_foyer_3
+      attribute: event_type
+      from: short_release
+    condition: []
+    action:
+    - service: light.toggle
+      metadata: {}
+      data: {}
+      target:
+        entity_id: light.lounge_room_downlights
+    mode: single
+
+### Button 4 ###
+  - alias: Hue Tap/Dial Swtich (Front Foyer) - Button 4
+    id: hue_tap_dial_front_foyer_button_4
+    description: ''
+    trigger:
+    - platform: state
+      entity_id:
+      - event.button_front_foyer_4
+      attribute: event_type
+      from: short_release
+    condition: []
+    action:
+    - service: light.toggle
+      metadata: {}
+      data: {}
+      target:
+        entity_id: light.front_foyer_downlights
+    mode: single
+
+### Dial ###
+
+
+#### Presence ####
+  - alias: Presence Lighting
+    description: Lighting automated by presence
+    trigger:
+    - platform: numeric_state
+      entity_id:
+      - sensor.home_nearest_distance
+      id: Approaching
+      below: 10
+    - platform: numeric_state
+      entity_id:
+      - zone.home
+      above: 0
+      id: Approaching
+    - platform: state
+      entity_id:
+      - zone.home
+      to: '0'
+      id: Leaving
+    - platform: numeric_state
+      entity_id:
+      - sensor.home_nearest_distance
+      above: 10
+      id: Leaving
+    condition: []
+    action:
+    - choose:
+      - conditions:
+        - condition: and
+          conditions:
+          - condition: trigger
+            id:
+            - Approaching
+          - condition: or
+            conditions:
+            - condition: state
+              entity_id: sensor.home_nearest_direction_of_travel
+              state: towards
+            - condition: state
+              entity_id: sensor.home_nearest_direction_of_travel
+              state: arrived
+        sequence:
+        - service: input_boolean.turn_on
+          metadata: {}
+          data: {}
+          target:
+            entity_id: input_boolean.presence
+      - conditions:
+        - condition: trigger
+          id:
+          - Approaching
+        sequence:
+        - service: input_boolean.turn_on
+          metadata: {}
+          data: {}
+          target:
+            entity_id:
+            - input_boolean.presence
+            - input_boolean.adaptive_lighting_presence
+        - service: adaptive_lighting.change_switch_settings
+          metadata: {}
+          data:
+            use_defaults: configuration
+            entity_id: switch.adaptive_lighting
+      - conditions:
+        - condition: trigger
+          id:
+          - Leaving
+        sequence:
+        - service: input_boolean.turn_off
+          metadata: {}
+          data: {}
+          target:
+            entity_id:
+            - input_boolean.presence
+            - input_boolean.adaptive_lighting_presence
+        - service: adaptive_lighting.change_switch_settings
+          metadata: {}
+          data:
+            use_defaults: configuration
+            entity_id: switch.adaptive_lighting
+            max_brightness: '25'
+            min_brightness: '1'
+    mode: single

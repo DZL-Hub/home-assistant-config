@@ -1,0 +1,11 @@
+###############################################################################
+#   @author         :   SchmittyD
+#   @created date   :   12/07/2024 (AEST)
+#   @edited date    :   12/07/2024 (AEST)
+#   @package        :   Presence
+#   @description    :   Detect presence for use in other packages
+###############################################################################
+
+##### Binary Sensors #####
+binary_sensor:
+#### Internal ####

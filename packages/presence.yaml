@@ -1,0 +1,10 @@
+###############################################################################
+#   @author         :   SchmittyD
+#   @created date   :   13/07/2024 (AEST)
+#   @edited date    :   13/07/2024 (AEST)
+#   @package        :   Presence
+#   @description    :   Presence detection
+###############################################################################
+
+##### Binary sensors #####
+binary_sensor:

@@ -1,0 +1,84 @@
+- id: '1720236172840'
+  alias: Presence Lighting
+  description: Lighting automated by presence
+  trigger:
+  - platform: numeric_state
+    entity_id:
+    - sensor.home_nearest_distance
+    id: Approaching
+    below: 10
+  - platform: numeric_state
+    entity_id:
+    - zone.home
+    above: 0
+    id: Approaching
+  - platform: state
+    entity_id:
+    - zone.home
+    to: '0'
+    id: Leaving
+  - platform: numeric_state
+    entity_id:
+    - sensor.home_nearest_distance
+    above: 10
+    id: Leaving
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: and
+        conditions:
+        - condition: trigger
+          id:
+          - Approaching
+        - condition: or
+          conditions:
+          - condition: state
+            entity_id: sensor.home_nearest_direction_of_travel
+            state: towards
+          - condition: state
+            entity_id: sensor.home_nearest_direction_of_travel
+            state: arrived
+      sequence:
+      - service: input_boolean.turn_on
+        metadata: {}
+        data: {}
+        target:
+          entity_id: input_boolean.presence
+    - conditions:
+      - condition: trigger
+        id:
+        - Approaching
+      sequence:
+      - service: input_boolean.turn_on
+        metadata: {}
+        data: {}
+        target:
+          entity_id:
+          - input_boolean.presence
+          - input_boolean.adaptive_lighting_presence
+      - service: adaptive_lighting.change_switch_settings
+        metadata: {}
+        data:
+          use_defaults: configuration
+          entity_id: switch.adaptive_lighting
+    - conditions:
+      - condition: trigger
+        id:
+        - Leaving
+      sequence:
+      - service: input_boolean.turn_off
+        metadata: {}
+        data: {}
+        target:
+          entity_id:
+          - input_boolean.presence
+          - input_boolean.adaptive_lighting_presence
+      - service: adaptive_lighting.change_switch_settings
+        metadata: {}
+        data:
+          use_defaults: configuration
+          entity_id: switch.adaptive_lighting
+          max_brightness: '25'
+          min_brightness: '1'
+  mode: single

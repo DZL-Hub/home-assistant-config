@@ -1,0 +1,77 @@
+###############################################################################
+#   @author         :   SchmittyD
+#   @created date   :   15/07/2024 (AEST)
+#   @edited date    :   15/07/2024 (AEST)
+#   @configuration  :   Configuration
+#   @description    :   Main configuration
+###############################################################################
+homeassistant:
+#  external_url: !secret ahsl_base_url
+  internal_url: http://192.168.20.26:8123
+  customize: !include customize.yaml
+  auth_providers:
+    - type: homeassistant
+  packages: !include_dir_named packages
+#  media_dirs:
+#    haunted_sounds: /media/haunted_sounds
+#    music: /media/music
+#    sounds: /media/sounds
+#    disney: /media/disney
+#    books: /media/books
+#    images: /media/images
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+  extra_module_url:
+    - /hacsfiles/hass-hue-icons/hass-hue-icons.js
+    - /local/community/custom-brand-icons/custom-brand-icons.js
+
+# Default Includes #
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+# Custom Includes #
+group: !include groups.yaml
+input_boolean: !include input_boolean.yaml
+input_datetime: !include input_datetime.yaml
+input_select: !include input_select.yaml
+light: !include lights.yaml
+#panel_custom: !include panels.yaml
+switch: !include switches.yaml
+template: !include template.yaml
+
+# Default Home zone #
+zone:
+  # This will override the default home zone
+  - name: Home
+    latitude: -38.2412
+    longitude: 146.4017
+    radius: 15
+    icon: mdi:home
+
+# Custom Panels #
+panel_custom:
+  - name: ha_system
+    sidebar_title: System Info
+    sidebar_icon: mdi:information-variant
+    js_url: /api/hassio/app/entrypoint.js
+    url_path: "hassio/system/info"
+    embed_iframe: true
+    require_admin: true
+    config:
+      ingress: core_configurator
+
+# Secrets #
+usr_dan:
+  - authentication: basic
+    username: "dan"
+    password: !secret pwd_dan
+usr_kiosk:
+  - authentication: basic
+    username: "kiosk"
+    password: !secret pwd_kiosk
