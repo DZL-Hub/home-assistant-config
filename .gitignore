@@ -4,9 +4,8 @@
 !*.sh
 !*.js
 
-notebooks/
-esphome/
-deps/
+!packages/
+
 custom_components/
 secrets.yaml
 
@@ -17,5 +16,8 @@ secrets.yaml
 *.log
 *.log.txt
 home-assistant.log
-home-assistant_v2
+home-assistant.log.*
+home-assistant_v2.db
+home-assistant_v2.db*
 id_ed*
+
