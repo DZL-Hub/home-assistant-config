@@ -1,0 +1,21 @@
+###############################################################################
+#   @author         :   SchmittyD
+#   @created date   :   18/07/2024 (AEST)
+#   @edited date    :   18/07/2024 (AEST)
+#   @package        :   GitHub
+#   @description    :   GitHub automations
+###############################################################################
+
+automation:
+## Git Push ##
+- id: '1721269831996'
+  alias: Git Push
+  description: 'Push configuration changes to GitHub'
+  trigger:
+  - platform: time
+    at: 02:00:00
+  condition: []
+  action:
+  - service: shell_command.git_push
+    data: {}
+  mode: single
