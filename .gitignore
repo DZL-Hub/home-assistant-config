@@ -18,11 +18,5 @@ secrets.yaml
 *.log.txt
 home-assistant.log
 home-assistant.log.*
-home-assistant_v2.db
-home-assistant_v2.db*
+home-assistant_v2*
 id_ed*
-
-home-assistant_v2.db
-home-assistant_v2.db-shm
-home-assistant_v2.db-wal
-home-assistant.log.1

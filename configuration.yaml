@@ -37,6 +37,7 @@ input_datetime: !include input_datetime.yaml
 input_select: !include input_select.yaml
 light: !include lights.yaml
 #panel_custom: !include panels.yaml
+schedule: !include schedules.yaml
 switch: !include switches.yaml
 template: !include template.yaml
 
