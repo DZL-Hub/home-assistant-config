@@ -16,7 +16,6 @@ secrets.yaml
 .google.token
 *.log
 *.log.txt
-home-assistant.log
-home-assistant.log.*
+home-assistant.log*
 home-assistant_v2*
 id_ed*
