@@ -62,10 +62,6 @@
         data:
           use_defaults: configuration
           entity_id: switch.adaptive_lighting
-      - if:
-        - condition: time
-          after: input_datetime.sleep_timer
-        then: []
     - conditions:
       - condition: trigger
         id:
@@ -85,4 +81,79 @@
           entity_id: switch.adaptive_lighting
           max_brightness: '25'
           min_brightness: '1'
+  mode: single
+- id: '1721558556926'
+  alias: Tap/Dial Switch
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.presence
+    to: 'on'
+  condition: []
+  action:
+  - alias: Front Foyer Tap/Dial Switch
+    if:
+    - condition: state
+      entity_id: event.button_front_foyer_1
+      attribute: event_type
+      state: short_release
+    then:
+    - service: light.toggle
+      metadata: {}
+      data: {}
+      target:
+        entity_id: light.lights_garage
+    else:
+    - if:
+      - condition: state
+        entity_id: event.button_front_foyer_2
+        attribute: event_type
+        state: short_release
+      then:
+      - service: light.toggle
+        metadata: {}
+        data: {}
+        target:
+          entity_id: light.lights_porch_front
+      alias: Front Foyer Button 2 is Short-pressed
+    - alias: Front Foyer Button 3 is Short-pressed
+      if:
+      - condition: state
+        entity_id: event.button_front_foyer_3
+        attribute: event_type
+        state: short_release
+      then:
+      - service: light.toggle
+        metadata: {}
+        data: {}
+        target:
+          entity_id:
+          - light.downlights_lounge_room
+    - alias: Front Foyer Button 4 is Short-pressed
+      if:
+      - condition: state
+        entity_id: event.button_front_foyer_4
+        attribute: event_type
+        state: short_release
+      then:
+      - service: light.toggle
+        metadata: {}
+        data: {}
+        target:
+          entity_id: light.lights_foyer_front
+    - alias: Front Foyer Dial is turned clockwise
+      if:
+      - condition: state
+        entity_id: event.rotary_front_foyer
+        attribute: event_type
+        state: clock_wise
+      then:
+      - service: light.turn_on
+        metadata: {}
+        data:
+          brightness_step_pct: 1
+          brightness_pct: 1
+        target:
+          entity_id: light.downlights_lounge_room
   mode: single
