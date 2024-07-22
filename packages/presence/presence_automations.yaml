@@ -1,3 +1,86 @@
+###############################################################################
+#   @author         :   SchmittyD
+#   @created date   :   23/07/2024 (AEST)
+#   @edited date    :   23/07/2024 (AEST)
+#   @package        :   Presence
+#   @description    :   Presence automation
+###############################################################################
+
+automation:
+- id: '1720236172840'
+  alias: Presence Detection
+  description: Detects presence based on approaching, leaving Home zone
+  trigger:
+  - platform: numeric_state
+    entity_id:
+    - sensor.home_nearest_distance
+    id: Approaching
+    below: 10
+  - platform: numeric_state
+    entity_id:
+    - zone.home
+    above: 0
+    id: Approaching
+  - platform: state
+    entity_id:
+    - zone.home
+    to: '0'
+    id: Leaving
+  - platform: numeric_state
+    entity_id:
+    - sensor.home_nearest_distance
+    above: 10
+    id: Leaving
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: and
+        conditions:
+        - condition: trigger
+          id:
+          - Approaching
+        - condition: or
+          conditions:
+          - condition: state
+            entity_id: sensor.home_nearest_direction_of_travel
+            state: towards
+          - condition: state
+            entity_id: sensor.home_nearest_direction_of_travel
+            state: arrived
+      sequence:
+      - service: input_boolean.turn_on
+        metadata: {}
+        data: {}
+        target:
+          entity_id:
+          - input_boolean.presence
+      alias: Turn on Presence when Approaching, traveling Towards and Arrived at Home
+    - conditions:
+      - condition: trigger
+        id:
+        - Approaching
+      sequence:
+      - service: input_boolean.turn_on
+        metadata: {}
+        data: {}
+        target:
+          entity_id:
+          - input_boolean.presence
+      alias: Turn on Presence when Approaching Home
+    - conditions:
+      - condition: trigger
+        id:
+        - Leaving
+      sequence:
+      - service: input_boolean.turn_off
+        metadata: {}
+        data: {}
+        target:
+          entity_id:
+          - input_boolean.presence
+      alias: Turn off Presence when Leaving Home
+  mode: single
 - id: '1721558556926'
   alias: Tap/Dial Switch
   description: ''
@@ -141,20 +224,4 @@
             brightness_pct: 1
           target:
             entity_id: light.downlights_lounge_room
-  mode: single
-- id: '1721661135970'
-  alias: Presence Lighting
-  description: Lighting automated by presence
-  trigger:
-  - platform: state
-    entity_id:
-    - input_boolean.presence
-    to: 'on'
-  condition: []
-  action:
-  - service: input_boolean.turn_on
-    metadata: {}
-    data: {}
-    target:
-      entity_id: input_boolean.adaptive_lighting_presence
   mode: single
