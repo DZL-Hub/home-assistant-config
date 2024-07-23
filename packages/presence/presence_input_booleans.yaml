@@ -1,0 +1,13 @@
+###############################################################################
+#   @author         :   SchmittyD
+#   @created date   :   23/07/2024 (AEST)
+#   @edited date    :   23/07/2024 (AEST)
+#   @package        :   Lighting
+#   @description    :   Input booleans for lighting
+###############################################################################
+
+input_boolean:
+## Presence ##
+  presence:
+    name: 'Presence'
+    icon: mdi:location-enter

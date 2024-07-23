@@ -1,0 +1,33 @@
+###############################################################################
+#   @author         :   SchmittyD
+#   @created date   :   23/07/2024 (AEST)
+#   @edited date    :   23/07/2024 (AEST)
+#   @package        :   Lighting
+#   @description    :   Input booleans for lighting
+###############################################################################
+
+input_boolean:
+## Adaptive Lighting: Presence ##
+  adaptive_lighting_presence:
+    name: 'Adaptive Lighting: Presence'
+    icon: mdi:theme-light-dark
+## Late Mode ##
+  adaptive_lighting_home_external_late_night:
+    name: 'Late Night'
+    icon: mdi:lightbulb-night
+## Night Mode ##
+  adaptive_lighting_home_external_night_mode:
+    name: 'Night'
+    icon: mdi:lightbulb-night
+## Sleep Mode ##
+  adaptive_lighting_home_internal_sleep_mode:
+    name: 'Sleep Mode'
+    icon: mdi:weather-night
+## Wake Up ##
+  adaptive_lighting_home_internal_wake_up:
+    name: 'Wake Up'
+    icon: mdi:bed-clock
+## Wind Down ##
+  adaptive_lighting_home_internal_wind_down:
+    name: 'Wind Down'
+    icon: mdi:bed-clock
