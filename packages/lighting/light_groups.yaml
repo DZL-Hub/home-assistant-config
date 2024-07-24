@@ -11,7 +11,7 @@ light:
   - platform: group
     name: Internal Lights
     unique_id: d81982d7-d7f5-4a2a-b31d-c08e5a548ee2
-    all: true
+    all: false
     entities:
   #    - light.downlight_alcove
   #    - light.downlight_bedroom
@@ -37,7 +37,7 @@ light:
   - platform: group
     name: Internal Downlights
     unique_id: 38749c8d-0ac9-41d6-b0b9-19bd80cb612c
-    all: true
+    all: false
     entities:
   #    - light.downlight_alcove
   #    - light.downlight_bedroom
