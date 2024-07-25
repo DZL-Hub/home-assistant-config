@@ -7,10 +7,6 @@
 ###############################################################################
 
 input_boolean:
-## Adaptive Lighting: Presence ##
-  adaptive_lighting_presence:
-    name: 'Adaptive Lighting: Presence'
-    icon: mdi:theme-light-dark
 ## Late Mode ##
   adaptive_lighting_home_external_late_night:
     name: 'Late Night'
@@ -31,3 +27,7 @@ input_boolean:
   adaptive_lighting_home_internal_wind_down:
     name: 'Wind Down'
     icon: mdi:bed-clock
+## Adaptive Lighting: Presence ##
+  adaptive_lighting_presence:
+    name: 'Presence'
+    icon: mdi:location-enter

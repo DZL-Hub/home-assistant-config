@@ -433,7 +433,7 @@ light:
     all: true
     entities:
       - light.lights_garage
-      - light.lights_recessed_porch
+      - light.downlights_porch
 # Night Zone Downlights #
   - platform: group
     name: Night Zone Downlights
