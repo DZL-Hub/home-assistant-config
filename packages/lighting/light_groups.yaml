@@ -13,70 +13,79 @@ light:
     unique_id: d81982d7-d7f5-4a2a-b31d-c08e5a548ee2
     all: false
     entities:
-  #    - light.downlight_alcove
-  #    - light.downlight_bedroom
-  #    - light.downlight_dining_room
-      - light.downlight_foyer_front
-      - light.downlight_hallway_1
-      - light.downlight_hallway_2
-  #    - light.downlight_kitchen
-  #    - light.downlight_kitchen_pantry
-  #    - light.downlight_kitchen_sink
-  #    - light.downlight_laundry
-      - light.downlight_lounge_room_1
-      - light.downlight_lounge_room_2
-  #    - light.downlight_office
-  #    - light.strip_kitchen_1
-  #    - light.strip_kitchen_2
-  #    - light.strip_kitchen_3
-  #    - light.strip_office_1
-  #    - light.strip_office_2
-  #    - light.strip_office_3
-  #    - light.pendant_dining_room
+  #    - light.downlight_internal_alcove
+  #    - light.downlight_internal_bedroom
+  #    - light.downlight_internal_dining_room
+  #    - light.downlight_internal_hallway_2
+  #    - light.downlight_internal_kitchen
+  #    - light.downlight_internal_kitchen_pantry
+  #    - light.downlight_internal_kitchen_sink
+  #    - light.downlight_internal_laundry
+  #    - light.downlight_internal_lounge_room_1
+  #    - light.downlight_internal_lounge_room_2
+  #    - light.downlight_internal_office
+  #    - light.strip_internal_kitchen_1
+  #    - light.strip_internal_kitchen_2
+  #    - light.strip_internal_kitchen_3
+  #    - light.strip_internal_office_1
+  #    - light.strip_internal_office_2
+  #    - light.strip_internal_office_3
+  #    - light.pendant_internal_dining_room
+      - light.downlights_internal
+      - light.lamps_internal
+      - light.pendants_internal
+      - light.strips_internal
 ### Internal Downlights ###
   - platform: group
     name: Internal Downlights
     unique_id: 38749c8d-0ac9-41d6-b0b9-19bd80cb612c
     all: false
     entities:
-  #    - light.downlight_alcove
-  #    - light.downlight_bedroom
-  #    - light.downlight_dining_room
-      - light.downlight_foyer_front
-      - light.downlight_hallway_1
-      - light.downlight_hallway_2
-  #    - light.downlight_kitchen
-  #    - light.downlight_kitchen_pantry
-  #    - light.downlight_kitchen_sink
-  #    - light.downlight_laundry
-      - light.downlight_lounge_room_1
-      - light.downlight_lounge_room_2
-  #    - light.downlight_office
+  #    - light.downlight_internal_alcove
+  #    - light.downlight_internal_bedroom
+  #    - light.downlight_internal_dining_room
+  #    - light.downlight_internal_foyer_front
+  #    - light.downlight_internal_hallway_1
+  #    - light.downlight_internal_hallway_2
+  #    - light.downlight_internal_kitchen
+  #    - light.downlight_internal_kitchen_pantry
+  #    - light.downlight_internal_kitchen_sink
+  #    - light.downlight_internal_laundry
+  #    - light.downlight_internal_lounge_room_1
+  #    - light.downlight_internal_lounge_room_2
+  #    - light.downlight_internal_office
+  #    - light.downlight_internal_toilet
+  #    - light.downlights_internal_alcove
+  #    - light.downlights_internal_bedroom
+      - light.downlights_internal_foyer_front
+      - light.downlights_internal_hallway
+  #    - light.downlights_internal_kitchen
+  #    - light.downlights_internal_laundry
+      - light.downlights_internal_lounge_room
+  #    - light.downlights_internal_office
+  #    - light.downlights_internal_toilet
 ### Internal Pendant Lights ###
   #- platform: group
   #  name: Internal Pendant Lights
   #  unique_id: 51a73308-3789-4c51-8356-2bf85bc9e2ee
   #  all: true
   #  entities:
-  #    - light.pendant_dining_room
+  #    - light.pendants_internal
 ### Internal Strip Lights ###
   #- platform: group
   #  name: Internal Strip Lighting
   #  unique_id: f259aa2e-6edb-4857-8048-ceb3547d198d
   #  entities:
-  #    - light.strip_garage_1
-  #    - light.strip_garage_2
-  #    - light.strip_garage_3
-  #    - light.strip_kitchen_1
-  #    - light.strip_kitchen_2
-  #    - light.strip_kitchen_3
-  #    - light.strip_office_1
-  #    - light.strip_office_2
-  #    - light.strip_office_3
-  #    - light.strip_
-  #    - light.strip_
-  #    - light.strip_
-  #    - light.strip_
+  #    - light.strip_internal_kitchen_1
+  #    - light.strip_internal_kitchen_2
+  #    - light.strip_internal_kitchen_3
+  #    - light.strip_internal_office_1
+  #    - light.strip_internal_office_2
+  #    - light.strip_internal_office_3
+  #    - light.strip_internal_
+  #    - light.strip_internal_
+  #    - light.strip_internal_
+  #    - light.strips_internal
 
 ## Front Foyer Lights ##
   - platform: group
@@ -84,14 +93,14 @@ light:
     unique_id: f9b4107b-9a23-466b-b656-e25e22152606
     all: true
     entities:
-      - light.downlight_foyer_front
+      - light.downlights_internal_foyer_front
 # Front Foyer Downlights #
   - platform: group
     name: Front Foyer Downlights
     unique_id: 8d4b6cf8-c51c-44e6-9b58-0e34e89639b7
     all: true
     entities:
-      - light.downlight_foyer_front
+      - light.downlight_internal_foyer_front
 
 ## Lounge Room Lights ##
   - platform: group
@@ -99,16 +108,17 @@ light:
     unique_id: cdd46ecb-8cf0-4014-b95a-4d7b17ca8085
     all: true
     entities:
-      - light.downlight_lounge_room_1
-      - light.downlight_lounge_room_2
+  #    - light.downlight_internal_lounge_room_1
+  #    - light.downlight_internal_lounge_room_2
+      - light.downlights_internal_lounge_room
 # Lounge Room Downlights #
   - platform: group
     name: Lounge Room Downlights
     unique_id: d11774f2-ca89-4593-8aa7-daec326c166a
     all: true
     entities:
-      - light.downlight_lounge_room_1
-      - light.downlight_lounge_room_2
+      - light.downlight_internal_lounge_room_1
+      - light.downlight_internal_lounge_room_2
 
 ## Dining Room Lights ##
   #- platform: group
@@ -116,22 +126,22 @@ light:
   #  unique_id: 0910898f-fb83-4b44-a13c-b827b94a2d82
   #  all: true
   #  entities:
-  #    - light.downlight_dining_room
-  #    - light.pendant_dining_room
+  #    - light.downlights_internal_dining_room
+  #    - light.pendants_internal_dining_room
 # Dining Room Downlights #
   #- platform: group
   #  name: Dining Room Downlights
   #  unique_id: c2283f89-e338-4e67-9f05-d528f29db101
   #  all: true
   #  entities:
-  #    - light.downlight_dining_room
+  #    - light.downlight_internal_dining_room
 # Dining Room Pendant Lights #
   #- platform: group
   #  name: Dining Room Pendant Lights
   #  unique_id: a3720c4e-22ec-4b73-b1e0-b8c7a347c129
   #  all: true
   #  entities:
-  #    - light.pendant_dining_room
+  #    - light.pendant_internal_dining_room
 
 ## Kitchen Lights ##
   #- platform: group
@@ -139,30 +149,32 @@ light:
   #  unique_id: 0b2392a2-261f-455b-a197-c8504ddcf03e
   #  all: true
   #  entities:
-  #    - light.downlight_kitchen
-  #    - light.downlight_kitchen_pantry
-  #    - light.downlight_kitchen_sink
-  #    - light.strip_kitchen_1
-  #    - light.strip_kitchen_2
-  #    - light.strip_kitchen_3
+  #    - light.downlight_internal_kitchen
+  #    - light.downlight_internal_kitchen_pantry
+  #    - light.downlight_internal_kitchen_sink
+  #    - light.strip_internal_kitchen_1
+  #    - light.strip_internal_kitchen_2
+  #    - light.strip_internal_kitchen_3
+  #    - light.downlights_internal_kitchen
+  #    - light.strips_internal_kitchen
 # Kitchen Downlights #
   #- platform: group
   #  name: Kitchen Downlights
   #  unique_id: 2525cfac-6582-44a2-8880-88a919a4f29f
   #  all: true
   #  entities:
-  #    - light.downlight_kitchen
-  #    - light.downlight_kitchen_pantry
-  #    - light.downlight_kitchen_sink
+  #    - light.downlight_internal_kitchen
+  #    - light.downlight_internal_kitchen_pantry
+  #    - light.downlight_internal_kitchen_sink
 # Kitchen Strip Lights #
   #- platform: group
   #  name: Kitchen Strip Lighting
   #  unique_id: d00fc339-c012-4a40-9ae2-ff4517cb8d03
   #  all: true
   #  entities:
-  #    - light.strip_kitchen_1
-  #    - light.strip_kitchen_2
-  #    - light.strip_kitchen_3
+  #    - light.strip_internal_kitchen_1
+  #    - light.strip_internal_kitchen_2
+  #    - light.strip_internal_kitchen_3
 
 ## Hallway Lights ##
   - platform: group
@@ -170,16 +182,17 @@ light:
     unique_id: ff452a53-074d-4b26-b04f-d9ee1d0bc994
     all: true
     entities:
-      - light.downlight_hallway_1
-      - light.downlight_hallway_2
+  #    - light.downlight_internal_hallway_1
+  #    - light.downlight_internal_hallway_2
+      - light.downlights_internal_hallway
 # Hallway Downlights #
   - platform: group
     name: Hallway Downlights
     unique_id: b49c42ae-86d7-47a2-b374-09817f3d6c57
     all: true
     entities:
-      - light.downlight_hallway_1
-      - light.downlight_hallway_2
+      - light.downlight_internal_hallway_1
+      - light.downlight_internal_hallway_2
 
 ## Alcove Lights ##
   #- platform: group
@@ -187,14 +200,15 @@ light:
   #  unique_id: d91899f9-dbc2-43ae-a878-841fb801f5c5
   #  all: true
   #  entities:
-  #    - light.downlight_alcove
+  #    - light.downlight_internal_alcove
+  #    - light.downlights_internal_alcove
 # Alcove Downlights #
   #- platform: group
   #  name: Alcove Downlights
   #  unique_id: f25200fa-bdfe-4956-97c5-3ac21a33b05e
   #  all: true
   #  entities:
-  #    - light.downlight_alcove
+  #    - light.downlight_internal_alcove
 
 ## Toilet Lights ##
   #- platform: group
@@ -202,14 +216,14 @@ light:
   #  unique_id: 898e9784-d4bf-4fc6-b4aa-da5c16413212
   #  all: true
   #  entities:
-  #    - light.downlight_toilet
+  #    - light.downlights_internal_toilet
 # Toilet Downlights #
   #- platform: group
   #  name: Toilet Downlights
   #  unique_id: c62a4671-c6f5-4997-af59-76b7ba6d7c09
   #  all: true
   #  entities:
-  #    - light.downlight_toilet
+  #    - light.downlight_internal_toilet
 
 ## Laundry Lights ##
   #- platform: group
@@ -217,14 +231,14 @@ light:
   #  unique_id: 9cc39ffc-e5ea-4512-8c25-15c1f0f0de2e
   #  all: true
   #  entities:
-  #    - light.downlight_laundry
+  #    - light.downlights_internal_laundry
 # Laundry Downlights #
   #- platform: group
   #  name: Laundry Downlights
   #  unique_id: e3ff1588-9817-4191-b78e-a70446818d24
   #  all: true
   #  entities:
-  #    - light.downlight_laundry
+  #    - light.downlight_internal_laundry
 
 ## Bedroom Lights ##
   #- platform: group
@@ -233,23 +247,25 @@ light:
   #  all: true
   #  entities:
   #    - light.downlight_bedroom
-  #    - light.lamp_1_bedroom
-  #    - light.lamp_2_bedroom
+  #    - light.lamp_1_internal_bedroom
+  #    - light.lamp_2_internal_bedroom
+  #    - light.downlights_bedroom
+  #    - light.lamps_internal_bedroom
 # Bedroom Downlights #
   #- platform: group
   #  name: Bedroom Downlights
   #  unique_id: e0716bf8-f6dd-4152-b443-bb94c3fece5a
   #  all: true
   #  entities:
-  #    - light.downlight_bedroom
+  #    - light.downlight_internal_bedroom
 # Bedroom Lamps #
   #- platform: group
   #  name: Bedroom Lamps
   #  unique_id: 2112c2a0-2490-4554-b4eb-e7db2785f218
   #  all: true
   #  entities:
-  #    - light.lamp_1_bedroom
-  #    - light.lamp_2_bedroom
+  #    - light.lamp_1_internal_bedroom
+  #    - light.lamp_2_internal_bedroom
 
 ## Office Lights ##
   - platform: group
@@ -258,37 +274,40 @@ light:
     all: true
     entities:
   #    - light.downlight_office
-  #    - light.strip_office_1
-  #    - light.strip_office_2
-  #    - light.strip_office_3
-      - light.studio_office_green_screen
-      - light.studio_office_fill_light
-      - light.studio_office_key_light
+  #    - light.strip_internal_office_1
+  #    - light.strip_internal_office_2
+  #    - light.strip_internal_office_3
+  #    - light.studio_internal_office_green_screen
+  #    - light.studio_internal_office_fill_light
+  #    - light.studio_internal_office_key_light
+  #    - light.downlights_office
+  #    - light.strips_internal_office
+      - light.studio_internal_office
 # Office Downlights #
   #- platform: group
   #  name: Office Downlights
   #  unique_id: 21560852-51ff-4a26-8ec7-dbcd971f482b
   #  all: true
   #  entities:
-  #    - light.downlight_office
+  #    - light.downlight_internal_office
 # Office Strip Lights #
   #- platform: group
   #  name: Office Strip Lighting
   #  unique_id: e573b5b7-83dc-4da4-8ef2-763ee087c653
   #  all: true
   #  entities:
-  #    - light.strip_office_1
-  #    - light.strip_office_2
-  #    - light.strip_office_3
+  #    - light.strip_internal_office_1
+  #    - light.strip_internal_office_2
+  #    - light.strip_internal_office_3
 # Office Studio Lights #
   - platform: group
     name: Office Studio Lights
     unique_id: 0fde4c16-23f5-42af-aca0-4b33b897c91b
     all: true
     entities:
-      - light.studio_office_green_screen
-      - light.studio_office_fill_light
-      - light.studio_office_key_light
+      - light.studio_internal_office_green_screen
+      - light.studio_internal_office_fill_light
+      - light.studio_internal_office_key_light
 
 #### External Lights ####
   - platform: group
@@ -296,45 +315,60 @@ light:
     unique_id: 415e2007-025b-4179-be80-7255c208d2f1
     all: true
     entities:
-      - light.batten_garage
-      - light.downlight_porch_front_1
-      - light.downlight_porch_front_2
-  #    - light.downlight_porch_rear_1
-  #    - light.downlight_porch_rear_2
-  #    - light.floodlight_driveway
-  #    - light.floodlight_garage_1
-  #    - light.floodlight_garage_2
+  #    - light.batten_external_garage
+  #    - light.downlight_external_porch_front_1
+  #    - light.downlight_external_porch_front_2
+  #    - light.downlight_external_porch_rear_1
+  #    - light.downlight_external_porch_rear_2
+  #    - light.floodlight_external_driveway
+  #    - light.floodlight_external_garage_1
+  #    - light.floodlight_external_garage_2
+      - light.batten_external_garage
+      - light.downlights_external_porch
 ### External Batten Lights ###
   - platform: group
     name: External Batten Lights
     unique_id: 311dfce3-a513-4fb8-ad25-9d3def660ec0
     all: true
     entities:
-      - light.batten_garage
+      - light.battens_external_garage
 ### External Downlights ###
   - platform: group
     name: External Downlights
     unique_id: 82106472-9b35-4241-92fb-580ca04d8115
     all: true
     entities:
-      - light.downlight_porch_front_1
-      - light.downlight_porch_front_2
-  #    - light.downlight_porch_rear_1
-  #    - light.downlight_porch_rear_2
+  #    - light.downlight_external_porch_front_1
+  #    - light.downlight_external_porch_front_2
+  #    - light.downlight_external_porch_rear_1
+  #    - light.downlight_external_porch_rear_2
+      - light.downlights_external_porch
+### External Floodlights ###
+  - platform: group
+    name: External Floodlights
+    unique_id: 82106472-9b35-4241-92fb-580ca04d8115
+    all: true
+    entities:
+  #    - light.floodlight_external_driveway
+  #    - light.floodlight_external_garage
+  #    - light.floodlights_external
+
 
 ## Driveway Lights ##
   #  name: Driveway Lights
   #  unique_id: 5e83b5c7-7338-48b5-bfc6-05437fbf9541
   #  all: true
   #  entities:
-  #    - light.floodlight_driveway
+  #    - light.floodlight_external_driveway
+  #    - light.floodlights_external_driveway
 # Driveway Floodlights #
   #- platform: group
   #  name: Driveway Floodlights
   #  all: true
   #  unique_id: e3e3535e-4f06-4b4c-af6d-201c47cf4888
   #  entities:
-  #    - light.floodlight_driveway
+  #    - light.floodlight_external_driveway
+  #    - light.floodlights_external_driveway
 
 ## Garage Lights ##
   - platform: group
@@ -342,35 +376,38 @@ light:
     unique_id: 0df5745c-7fd2-4015-b743-530f21854211
     all: true
     entities:
-      - light.batten_garage
-  #    - light.floodlight_garage_1
-  #    - light.floodlight_garage_2
-  #    - light.strip_garage_1
-  #    - light.strip_garage_2
-  #    - light.strip_garage_3
+  #    - light.batten_external_garage
+  #    - light.floodlight_external_garage_1
+  #    - light.floodlight_external_garage_2
+  #    - light.strip_external_garage_1
+  #    - light.strip_external_garage_2
+  #    - light.strip_external_garage_3
+      - light.battens_external_garage
+  #    - light.floodlights_external_garage
+  #    - light.strips_external_garage
 # Garage Downlights #
   - platform: group
     name: Garage Batten Lights
     unique_id: 9402986e-538a-4b88-95bb-c5f23c010c59
     all: true
     entities:
-      - light.batten_garage
+      - light.batten_external_garage
 # Garage Floodlights #
   #- platform: group
   #  name: Garage Floodlights
   #  unique_id: 8ad8a89b-29a1-4b3d-af91-a67b7b13806b
   #  all: true
   #  entities:
-  #    - light.floodlight_garage_1
-  #    - light.floodlight_garage_2
+  #    - light.floodlight_external_garage_1
+  #    - light.floodlight_external_garage_2
 # Garage Strip Lights #
   #  name: Garage Strip Lights
   #  unique_id: 2943e00f-c094-4f1b-a6b1-5d45d1df4c97
   #  all: true
   #  entities:
-  #    - light.strip_garage_1
-  #    - light.strip_garage_2
-  #    - light.strip_garage_3
+  #    - light.strip_external_garage_1
+  #    - light.strip_external_garage_2
+  #    - light.strip_external_garage_3
 
 #### Porch Lights ####
   - platform: group
@@ -378,20 +415,23 @@ light:
     unique_id: c4b51391-4d5f-40ce-97a7-111bab550cda
     all: true
     entities:
-      - light.downlight_porch_front_1
-      - light.downlight_porch_front_2
-      - light.downlight_porch_front_1
-      - light.downlight_porch_front_2
+  #    - light.downlight_external_porch_front_1
+  #    - light.downlight_external_porch_front_2
+  #    - light.downlight_external_porch_rear_1
+  #    - light.downlight_external_porch_rear_2
+      - light.downlights_external_porch
 ### Porch Downlights ###
   - platform: group
     name: Porch Downlights
     unique_id: 45d631ce-2cc3-4c47-a0a7-f59f78ad5821
     all: true
     entities:
-      - light.downlight_porch_front_1
-      - light.downlight_porch_front_2
-      - light.downlight_porch_front_1
-      - light.downlight_porch_front_2
+  #    - light.downlight_external_porch_front_1
+  #    - light.downlight_external_porch_front_2
+  #    - light.downlight_external_porch_rear_1
+  #    - light.downlight_external_porch_rear_2
+      - light.downlights_external_porch_front
+      - light.downlights_external_porch_rear
 
 ## Front Porch Lights ##
   - platform: group
@@ -399,16 +439,17 @@ light:
     unique_id: 28c3ccfa-911f-44bd-9294-0fa3265fc103
     all: true
     entities:
-      - light.downlight_porch_front_1
-      - light.downlight_porch_front_2
+  #    - light.downlight_external_porch_front_1
+  #    - light.downlight_external_porch_front_2
+      - light.downlights_external_porch_front
 # Front Porch Downlights #
   - platform: group
     name: Front Porch Downlights
     unique_id: 5c626e15-44a6-4bb4-9255-b981380736a0
     all: true
     entities:
-      - light.downlight_porch_front_1
-      - light.downlight_porch_front_2
+      - light.downlight_external_porch_front_1
+      - light.downlight_external_porch_front_2
 
 ## Rear Porch Lights ##
   #- platform: group
@@ -416,15 +457,15 @@ light:
   #  unique_id: d61b0fda-5570-46d9-a7a1-9874731a1dc4
   #  all: true
   #  entities:
-  #    - light.downlight_porch_rear_1
-  #    - light.downlight_porch_rear_2
+  #    - light.downlight_external_porch_rear_1
+  #    - light.downlight_external_porch_rear_2
 # Rear Porch Downlights #
   #- platform: group
   #  name: Rear Porch Downlights
   #  unique_id: d61b0fda-5570-46d9-a7a1-9874731a1dc4
   #  entities:
-  #    - light.downlight_porch_rear_1
-  #    - light.downlight_porch_rear_2
+  #    - light.downlight_external_porch_rear_1
+  #    - light.downlight_external_porch_rear_2
 
 ## Night Zone Lights ##
   - platform: group
@@ -432,8 +473,8 @@ light:
     unique_id: 2ca1e54a-e266-43de-b0d6-dca6afff1d02
     all: true
     entities:
-      - light.lights_garage
-      - light.downlights_porch
+      - light.lights_external_garage
+      - light.downlights_external_porch
 # Night Zone Downlights #
   - platform: group
     name: Night Zone Downlights
@@ -441,10 +482,10 @@ light:
     all: true
     entities:
       - light.batten_garage
-      - light.downlight_porch_front_1
-      - light.downlight_porch_front_2
-  #    - light.downlight_porch_rear_1
-  #    - light.downlight_porch_rear_2
+      - light.downlight_external_porch_front_1
+      - light.downlight_external_porch_front_2
+  #    - light.downlight_external_porch_rear_1
+  #    - light.downlight_external_porch_rear_2
 
 ## Sleep Zone Lights ##
   - platform: group
@@ -453,23 +494,23 @@ light:
     all: true
     entities:
   #    - light.downlight_bedroom
-      - light.downlight_foyer_front
-      - light.downlight_hallway_1
-      - light.downlight_hallway_2
-      - light.downlight_lounge_room_1
-      - light.downlight_lounge_room_2
+      - light.downlight_internal_foyer_front
+      - light.downlight_internal_hallway_1
+      - light.downlight_internal_hallway_2
+      - light.downlight_internal_lounge_room_1
+      - light.downlight_internal_lounge_room_2
 # Sleep Zone Downlights #
   - platform: group
     name: Sleep Zone Downlights
     unique_id: b2bb5111-7333-4793-8fc3-2d518b1b616b
     all: true
     entities:
-  #    - light.downlight_bedroom
-      - light.downlight_foyer_front
-      - light.downlight_hallway_1
-      - light.downlight_hallway_2
-      - light.downlight_lounge_room_1
-      - light.downlight_lounge_room_2
+  #    - light.downlight_internal_bedroom
+      - light.downlight_internal_foyer_front
+      - light.downlight_internal_hallway_1
+      - light.downlight_internal_hallway_2
+      - light.downlight_internal_lounge_room_1
+      - light.downlight_internal_lounge_room_2
 
 ### Batten Lights ###
   - platform: group
@@ -477,7 +518,7 @@ light:
     unique_id: 386b0cc1-fcbe-42f8-b414-f6bc93114f5c
     all: true
     entities:
-      - light.batten_garage
+      - light.batten_external_garage
 
 ### Downlights ###
   - platform: group
@@ -485,23 +526,23 @@ light:
     unique_id: 60eabb15-06eb-4499-b156-6c6bf6bbb364
     all: true
     entities:
-  #    - light.downlight_alcove
-  #    - light.downlight_bedroom
-  #    - light.downlight_dining_room
-      - light.downlight_foyer_front
-      - light.downlight_hallway_1
-      - light.downlight_hallway_2
-  #    - light.downlight_kitchen
-  #    - light.downlight_kitchen_pantry
-  #    - light.downlight_kitchen_sink
-  #    - light.downlight_laundry
-      - light.downlight_lounge_room_1
-      - light.downlight_lounge_room_2
-  #    - light.downlight_office
-      - light.downlight_porch_front_1
-      - light.downlight_porch_front_2
-  #    - light.downlight_porch_rear_1
-  #    - light.downlight_porch_rear_2
+  #    - light.downlight_internal_alcove
+  #    - light.downlight_internal_bedroom
+  #    - light.downlight_internal_dining_room
+      - light.downlight_internal_foyer_front
+      - light.downlight_internal_hallway_1
+      - light.downlight_internal_hallway_2
+  #    - light.downlight_internal_kitchen
+  #    - light.downlight_internal_kitchen_pantry
+  #    - light.downlight_internal_kitchen_sink
+  #    - light.downlight_internal_laundry
+      - light.downlight_internal_lounge_room_1
+      - light.downlight_internal_lounge_room_2
+  #    - light.downlight_external_internal_office
+      - light.downlight_external_porch_front_1
+      - light.downlight_external_porch_front_2
+  #    - light.downlight_external_porch_rear_1
+  #    - light.downlight_external_porch_rear_2
 
 ### Floodlights ###
   #- platform: group
@@ -509,8 +550,8 @@ light:
   #  unique_id: e158a4f1-5c27-488e-8b71-cf8a00c19bc0
   #  all: true
   #  entities:
-  #    - light.lights_floodlight_driveway
-  #    - light.lights_floodlight_garage
+  #    - light.floodlight_external_driveway
+  #    - light.floodlight_external_garage
 
 ### Pendant Lights ###
   #- platform: group
@@ -518,7 +559,7 @@ light:
   #  unique_id: 13ac366e-32da-444a-a0ab-f896992a0da5
   #  all: true
   #  entities:
-  #    - light.lights_pendants_internal
+  #    - light.pendants_internal
 
 ### Strip Lights ###
   #- platform: group
@@ -526,5 +567,5 @@ light:
   #  unique_id: 598eaa9a-9b09-4b17-ac45-d5683d1ad642
   #  all: true
   #  entities:
-  #    - light.lights_strips_external
-  #    - light.lights_strips_internal
+  #    - light.strips_external
+  #    - light.strips_internal
