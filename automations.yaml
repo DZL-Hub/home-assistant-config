@@ -71,7 +71,20 @@
           brightness_step_pct: 1
           brightness_pct: 1
         target:
-          entity_id: light.downlights_lounge_room
+          entity_id: light.downlights_internal_lounge_room
+      else:
+      - if:
+        - condition: state
+          entity_id: event.rotary_front_foyer
+          attribute: event_type
+          state: counter_clock_wise
+        then:
+        - service: light.turn_on
+          target:
+            entity_id:
+            - light.downlights_internal_lounge_room
+          data:
+            brightness_step_pct: -1
   - if:
     - condition: state
       entity_id: input_boolean.presence
@@ -88,9 +101,10 @@
         metadata: {}
         data: {}
         target:
-          entity_id: light.lights_garage
+          entity_id: light.battens_external_garage
       else:
-      - if:
+      - alias: Front Foyer Button 2 is Short-pressed
+        if:
         - condition: state
           entity_id: event.button_front_foyer_2
           attribute: event_type
@@ -100,8 +114,7 @@
           metadata: {}
           data: {}
           target:
-            entity_id: light.lights_porch_front
-        alias: Front Foyer Button 2 is Short-pressed
+            entity_id: light.downlights_external_porch
       - alias: Front Foyer Button 3 is Short-pressed
         if:
         - condition: state
@@ -114,7 +127,7 @@
           data: {}
           target:
             entity_id:
-            - light.downlights_lounge_room
+            - light.downlights_internal_lounge_room
       - alias: Front Foyer Button 4 is Short-pressed
         if:
         - condition: state
@@ -126,21 +139,8 @@
           metadata: {}
           data: {}
           target:
-            entity_id: light.lights_foyer_front
-      - alias: Front Foyer Dial is turned clockwise
-        if:
-        - condition: state
-          entity_id: event.rotary_front_foyer
-          attribute: event_type
-          state: clock_wise
-        then:
-        - service: light.turn_on
-          metadata: {}
-          data:
-            brightness_step_pct: 1
-            brightness_pct: 1
-          target:
-            entity_id: light.downlights_lounge_room
+            entity_id:
+            - light.downlights_internal_foyer_front
   mode: single
 - id: '1721661135970'
   alias: Presence Lighting

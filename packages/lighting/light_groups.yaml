@@ -64,6 +64,32 @@ light:
       - light.downlights_internal_lounge_room
   #    - light.downlights_internal_office
   #    - light.downlights_internal_toilet
+## Internal Living Zone Lights ##
+  - platform: group
+    name: Internal Living Zone Lights
+    unique_id: 648eb084-7bca-4360-8bcd-771cfc9c4043
+    all: true
+    entities:
+  #    - light.downlight_bedroom
+  #    - light.downlight_internal_foyer_front
+  #    - light.downlight_internal_hallway_1
+  #    - light.downlight_internal_hallway_2
+  #    - light.downlight_internal_lounge_room_1
+  #    - light.downlight_internal_lounge_room_2
+      - light.downlights_internal_living_zone
+# Internal Living Zone Downlights #
+  - platform: group
+    name: Internal Living Zone Downlights
+    unique_id: b2bb5111-7333-4793-8fc3-2d518b1b616b
+    all: true
+    entities:
+  #    - light.downlight_internal_bedroom
+      - light.downlight_internal_foyer_front
+      - light.downlight_internal_hallway_1
+      - light.downlight_internal_hallway_2
+      - light.downlight_internal_lounge_room_1
+      - light.downlight_internal_lounge_room_2
+
 ### Internal Pendant Lights ###
   #- platform: group
   #  name: Internal Pendant Lights
@@ -86,6 +112,32 @@ light:
   #    - light.strip_internal_
   #    - light.strip_internal_
   #    - light.strips_internal
+## Internal Utility Zone Lights ##
+  - platform: group
+    name: Internal Utility Zone Lights
+    unique_id: 648eb084-7bca-4360-8bcd-771cfc9c4043
+    all: true
+    entities:
+  #    - light.downlight_bedroom
+  #    - light.downlight_internal_foyer_front
+  #    - light.downlight_internal_hallway_1
+  #    - light.downlight_internal_hallway_2
+  #    - light.downlight_internal_lounge_room_1
+  #    - light.downlight_internal_lounge_room_2
+      - light.downlights_internal_utility_zone
+# Internal Utility Zone Downlights #
+  - platform: group
+    name: Internal Utility Zone Downlights
+    unique_id: b2bb5111-7333-4793-8fc3-2d518b1b616b
+    all: true
+    entities:
+  #    - light.downlights_internal_kitchen
+  #    - light.downlights_internal_laundry
+      - light.downlight_internal_hallway_1
+      - light.downlight_internal_hallway_2
+      - light.downlight_internal_lounge_room_1
+      - light.downlight_internal_lounge_room_2
+
 
 ## Front Foyer Lights ##
   - platform: group
@@ -352,7 +404,25 @@ light:
   #    - light.floodlight_external_driveway
   #    - light.floodlight_external_garage
   #    - light.floodlights_external
-
+## External Main Zone Lights ##
+  - platform: group
+    name: External Main Zone Lights
+    unique_id: 2ca1e54a-e266-43de-b0d6-dca6afff1d02
+    all: true
+    entities:
+      - light.lights_external_garage
+      - light.downlights_external_porch
+# External Main Zone Downlights #
+  - platform: group
+    name: External Main Zone Downlights
+    unique_id: c1aa79d6-5063-4680-b147-d1b6a1f437fe
+    all: true
+    entities:
+      - light.batten_garage
+      - light.downlight_external_porch_front_1
+      - light.downlight_external_porch_front_2
+  #    - light.downlight_external_porch_rear_1
+  #    - light.downlight_external_porch_rear_2
 
 ## Driveway Lights ##
   #  name: Driveway Lights
@@ -432,7 +502,6 @@ light:
   #    - light.downlight_external_porch_rear_2
       - light.downlights_external_porch_front
       - light.downlights_external_porch_rear
-
 ## Front Porch Lights ##
   - platform: group
     name: Front Porch Lights
@@ -450,7 +519,6 @@ light:
     entities:
       - light.downlight_external_porch_front_1
       - light.downlight_external_porch_front_2
-
 ## Rear Porch Lights ##
   #- platform: group
   #  name: Rear Porch Lights
@@ -466,51 +534,6 @@ light:
   #  entities:
   #    - light.downlight_external_porch_rear_1
   #    - light.downlight_external_porch_rear_2
-
-## Night Zone Lights ##
-  - platform: group
-    name: Night Zone Lights
-    unique_id: 2ca1e54a-e266-43de-b0d6-dca6afff1d02
-    all: true
-    entities:
-      - light.lights_external_garage
-      - light.downlights_external_porch
-# Night Zone Downlights #
-  - platform: group
-    name: Night Zone Downlights
-    unique_id: c1aa79d6-5063-4680-b147-d1b6a1f437fe
-    all: true
-    entities:
-      - light.batten_garage
-      - light.downlight_external_porch_front_1
-      - light.downlight_external_porch_front_2
-  #    - light.downlight_external_porch_rear_1
-  #    - light.downlight_external_porch_rear_2
-
-## Sleep Zone Lights ##
-  - platform: group
-    name: Sleep Zone Lights
-    unique_id: 648eb084-7bca-4360-8bcd-771cfc9c4043
-    all: true
-    entities:
-  #    - light.downlight_bedroom
-      - light.downlight_internal_foyer_front
-      - light.downlight_internal_hallway_1
-      - light.downlight_internal_hallway_2
-      - light.downlight_internal_lounge_room_1
-      - light.downlight_internal_lounge_room_2
-# Sleep Zone Downlights #
-  - platform: group
-    name: Sleep Zone Downlights
-    unique_id: b2bb5111-7333-4793-8fc3-2d518b1b616b
-    all: true
-    entities:
-  #    - light.downlight_internal_bedroom
-      - light.downlight_internal_foyer_front
-      - light.downlight_internal_hallway_1
-      - light.downlight_internal_hallway_2
-      - light.downlight_internal_lounge_room_1
-      - light.downlight_internal_lounge_room_2
 
 ### Batten Lights ###
   - platform: group
