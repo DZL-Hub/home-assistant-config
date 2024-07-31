@@ -1,7 +1,7 @@
 ###############################################################################
 #   @author         :   SchmittyD
 #   @created date   :   16/07/2024 (AEST)
-#   @edited date    :   18/07/2024 (AEST)
+#   @edited date    :   31/07/2024 (AEST)
 #   @package        :   Lighting
 #   @description    :   Light groups
 ###############################################################################
@@ -76,19 +76,22 @@ light:
   #    - light.downlight_internal_hallway_2
   #    - light.downlight_internal_lounge_room_1
   #    - light.downlight_internal_lounge_room_2
-      - light.downlights_internal_living_zone
+      - light.downlights_internal_zone_living
 # Internal Living Zone Downlights #
   - platform: group
     name: Internal Living Zone Downlights
-    unique_id: b2bb5111-7333-4793-8fc3-2d518b1b616b
+    unique_id: aefbc8e9-363a-4f50-a71c-5f9e33c7cf0b
     all: true
     entities:
   #    - light.downlight_internal_bedroom
-      - light.downlight_internal_foyer_front
-      - light.downlight_internal_hallway_1
-      - light.downlight_internal_hallway_2
-      - light.downlight_internal_lounge_room_1
-      - light.downlight_internal_lounge_room_2
+  #    - light.downlight_internal_foyer_front
+  #    - light.downlight_internal_hallway_1
+  #    - light.downlight_internal_hallway_2
+  #    - light.downlight_internal_lounge_room_1
+  #    - light.downlight_internal_lounge_room_2
+      - light.downlights_internal_foyer_front
+      - light.downlights_internal_hallway
+      - light.downlights_internal_lounge_room
 
 ### Internal Pendant Lights ###
   #- platform: group
@@ -115,7 +118,7 @@ light:
 ## Internal Utility Zone Lights ##
   - platform: group
     name: Internal Utility Zone Lights
-    unique_id: 648eb084-7bca-4360-8bcd-771cfc9c4043
+    unique_id: c3b75146-50f9-42cb-b333-6e769a2cb19e
     all: true
     entities:
   #    - light.downlight_bedroom
@@ -124,7 +127,7 @@ light:
   #    - light.downlight_internal_hallway_2
   #    - light.downlight_internal_lounge_room_1
   #    - light.downlight_internal_lounge_room_2
-      - light.downlights_internal_utility_zone
+      - light.downlights_internal_zone_utility
 # Internal Utility Zone Downlights #
   - platform: group
     name: Internal Utility Zone Downlights
@@ -375,7 +378,7 @@ light:
   #    - light.floodlight_external_driveway
   #    - light.floodlight_external_garage_1
   #    - light.floodlight_external_garage_2
-      - light.batten_external_garage
+      - light.battens_external_garage
       - light.downlights_external_porch
 ### External Batten Lights ###
   - platform: group
@@ -387,7 +390,7 @@ light:
 ### External Downlights ###
   - platform: group
     name: External Downlights
-    unique_id: 82106472-9b35-4241-92fb-580ca04d8115
+    unique_id: 330e292b-eda9-4029-af27-766cb96cf5ea
     all: true
     entities:
   #    - light.downlight_external_porch_front_1
@@ -396,11 +399,11 @@ light:
   #    - light.downlight_external_porch_rear_2
       - light.downlights_external_porch
 ### External Floodlights ###
-  - platform: group
-    name: External Floodlights
-    unique_id: 82106472-9b35-4241-92fb-580ca04d8115
-    all: true
-    entities:
+  #- platform: group
+  #  name: External Floodlights
+  #  unique_id: 82106472-9b35-4241-92fb-580ca04d8115
+  #  all: true
+  #  entities:
   #    - light.floodlight_external_driveway
   #    - light.floodlight_external_garage
   #    - light.floodlights_external
@@ -410,19 +413,26 @@ light:
     unique_id: 2ca1e54a-e266-43de-b0d6-dca6afff1d02
     all: true
     entities:
-      - light.lights_external_garage
-      - light.downlights_external_porch
-# External Main Zone Downlights #
+      - light.battens_external_zone_main
+      - light.downlights_external_zone_main
+# External Main Zone Battens #
   - platform: group
-    name: External Main Zone Downlights
+    name: External Main Zone Battens
     unique_id: c1aa79d6-5063-4680-b147-d1b6a1f437fe
     all: true
     entities:
-      - light.batten_garage
-      - light.downlight_external_porch_front_1
-      - light.downlight_external_porch_front_2
+      - light.battens_external_garage
+# External Main Zone Downlights #
+  - platform: group
+    name: External Main Zone Downlights
+    unique_id: 69069cb6-2cab-4b5c-a33c-ede93ec58e5b
+    all: true
+    entities:
+  #    - light.downlight_external_porch_front_1
+  #    - light.downlight_external_porch_front_2
   #    - light.downlight_external_porch_rear_1
   #    - light.downlight_external_porch_rear_2
+      - light.downlights_external_porch
 
 ## Driveway Lights ##
   #  name: Driveway Lights

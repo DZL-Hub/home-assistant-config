@@ -24,6 +24,7 @@ frontend:
   extra_module_url:
     - /hacsfiles/hass-hue-icons/hass-hue-icons.js
     - /local/community/custom-brand-icons/custom-brand-icons.js
+    - /local/community/custom-icons/custom-icons.js
 
 # Default Includes #
 automation: !include automations.yaml
