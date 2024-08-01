@@ -99,7 +99,7 @@ light:
   #  unique_id: 51a73308-3789-4c51-8356-2bf85bc9e2ee
   #  all: true
   #  entities:
-  #    - light.pendants_internal
+  #    - light.pendants_internal_dining_room
 ### Internal Strip Lights ###
   #- platform: group
   #  name: Internal Strip Lighting
@@ -189,7 +189,7 @@ light:
   #  unique_id: c2283f89-e338-4e67-9f05-d528f29db101
   #  all: true
   #  entities:
-  #    - light.downlight_internal_dining_room
+  #    - light.downlights_internal_dining_room
 # Dining Room Pendant Lights #
   #- platform: group
   #  name: Dining Room Pendant Lights
@@ -444,8 +444,8 @@ light:
 # Driveway Floodlights #
   #- platform: group
   #  name: Driveway Floodlights
-  #  all: true
   #  unique_id: e3e3535e-4f06-4b4c-af6d-201c47cf4888
+  #  all: true
   #  entities:
   #    - light.floodlight_external_driveway
   #    - light.floodlights_external_driveway
@@ -541,6 +541,7 @@ light:
   #- platform: group
   #  name: Rear Porch Downlights
   #  unique_id: d61b0fda-5570-46d9-a7a1-9874731a1dc4
+  #  all: true
   #  entities:
   #    - light.downlight_external_porch_rear_1
   #    - light.downlight_external_porch_rear_2
@@ -551,7 +552,7 @@ light:
     unique_id: 386b0cc1-fcbe-42f8-b414-f6bc93114f5c
     all: true
     entities:
-      - light.batten_external_garage
+      - light.battens_external
 
 ### Downlights ###
   - platform: group

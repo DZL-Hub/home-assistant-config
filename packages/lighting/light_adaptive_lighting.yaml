@@ -8,167 +8,167 @@
 
 ## Default ##
 adaptive_lighting:
-  - name: "default" # You can rename your switch's display name in Home Assistant's UI.
-    lights: [] # List of light entity_ids to be controlled (may be empty). 🌟
-    interval: 90 # Frequency to adapt the lights, in seconds. 🔄 Note: The interval is used only once when the config loads. A config change and restart are required.
-    transition: 45 # Duration of transition when lights change, in seconds. 🕑
-    initial_transition: 1 # Duration of the first transition when lights turn from off to on in seconds. ⏲️
-    min_brightness: 1 # Minimum brightness percentage. 💡
-    max_brightness: 100 # Maximum brightness percentage. 💡
-    min_color_temp: 2500 # Warmest color temperature in Kelvin. 🔥
-    max_color_temp: 6500 # Coldest color temperature in Kelvin. ❄️
-    prefer_rgb_color: false # Whether to prefer RGB color adjustment over light color temperature when possible. 🌈
-    sleep_brightness: 1 # Brightness percentage of lights in sleep mode. 😴
-    sleep_rgb_or_color_temp: rgb_color  # Use either "rgb_color" or "color_temp" in sleep mode. 🌙
-    sleep_color_temp: 1000 # Color temperature in sleep mode (used when sleep_rgb_or_color_temp is color_temp) in Kelvin. 😴
-    sleep_rgb_color: [39,38,84]  # RGB color in sleep mode (used when sleep_rgb_or_color_temp is "rgb_color"). 🌈
-    sleep_transition: 30  # Duration of transition when "sleep mode" is toggled in seconds. 😴
-    transition_until_sleep: false  # When enabled, Adaptive Lighting will treat sleep settings as the minimum, transitioning to these values after sunset. 🌙
-    sunrise_time: "None"  # Set a fixed time (HH:MM:SS) for sunrise. Default: "None" 🌅
-    min_sunrise_time: "None"  # Set the earliest virtual sunrise time (HH:MM:SS), allowing for later sunrises. Default: "None" 🌅
-    max_sunrise_time: "None"  # Set the latest virtual sunrise time (HH:MM:SS), allowing for earlier sunrises. Default: "None" 🌅
-    sunrise_offset: 3200  # Adjust sunrise time with a positive or negative offset in seconds. ⏰
-    sunset_time: "None"  # Set a fixed time (HH:MM:SS) for sunset. Default: "None" 🌇
-    min_sunset_time: "None"  # Set the earliest virtual sunset time (HH:MM:SS), allowing for later sunsets. Default: "None" 🌇
-    max_sunset_time: "None"  # Set the latest virtual sunset time (HH:MM:SS), allowing for earlier sunsets. Default: "None" 🌇
-    sunset_offset: 1800  # Adjust sunset time with a positive or negative offset in seconds. ⏰
-    take_over_control: true  # Disable Adaptive Lighting if another source calls light.turn_on while lights are on and being adapted. Note that this calls homeassistant.update_entity every interval! 🔒
-    detect_non_ha_changes: false  # Detects and halts adaptations for non-light.turn_on state changes. Needs take_over_control enabled. 🕵️ Caution: ⚠️ Some lights might falsely indicate an 'on' state, which could result in lights turning on unexpectedly. Disable this feature if you encounter such issues.
-    autoreset_control_seconds: 0  # Automatically reset the manual control after a number of seconds. Set to 0 to disable. ⏲️
-    only_once: false  # Adapt lights only when they are turned on (true) or keep adapting them (false). 🔄
-    adapt_only_on_bare_turn_on: false  # When turning lights on initially. If set to true, AL adapts only if light.turn_on is invoked without specifying color or brightness. ❌🌈 This e.g., prevents adaptation when activating a scene. If false, AL adapts regardless of the presence of color or brightness in the initial service_data. Needs take_over_control enabled. 🕵️
-    separate_turn_on_commands: false  # Use separate light.turn_on calls for color and brightness, needed for some light types. 🔀
-    send_split_delay: 0  # Delay (ms) between separate_turn_on_commands for lights that don't support simultaneous brightness and color setting. ⏲️
-    adapt_delay: 0  # Wait time (seconds) between light turn on and Adaptive Lighting applying changes. Might help to avoid flickering. ⏲️
-    skip_redundant_commands: true  # Skip sending adaptation commands whose target state already equals the light's known state. Minimizes network traffic and improves the adaptation responsivity in some situations. 📉Disable if physical light states get out of sync with HA's recorded state.
-    intercept: true # Intercept and adapt light.turn_on calls to enabling instantaneous color and brightness adaptation. 🏎️ Disable for lights that do not support light.turn_on with color and brightness.
-    multi_light_intercept: true  # Intercept and adapt light.turn_on calls that target multiple lights. ➗⚠️ This might result in splitting up a single light.turn_on call into multiple calls, e.g., when lights are in different switches. Requires intercept to be enabled.
-    include_config_in_attributes: true  # Show all options as attributes on the switch in Home Assistant when set to true. 📝
+  - name: "default" # You can rename your switch's display name in Home Assistant's UI. Default:
+    lights: [] # List of light entity_ids to be controlled (may be empty). Default: [] 🌟
+    interval: 90 # Frequency to adapt the lights, in seconds. Default: 90 🔄 Note: The interval is used only once when the config loads. A config change and restart are required.
+    transition: 45 # Duration of transition when lights change, in seconds. Default: 45 🕑
+    initial_transition: 1 # Duration of the first transition when lights turn from off to on in seconds. Default: 1 ⏲️
+    min_brightness: 1 # Minimum brightness percentage. Default: 1 💡
+    max_brightness: 100 # Maximum brightness percentage. Default: 100 💡
+    min_color_temp: 2000 # Warmest color temperature in Kelvin. Default: 2000 🔥
+    max_color_temp: 5500 # Coldest color temperature in Kelvin. Default: 5500 ❄️
+    prefer_rgb_color: false # Whether to prefer RGB color adjustment over light color temperature when possible. Default: False 🌈
+    sleep_brightness: 1 # Brightness percentage of lights in sleep mode. Default: 1 😴
+    sleep_rgb_or_color_temp: color_temp  # Use either "rgb_color" or "color_temp" in sleep mode. Default: color_temp 🌙
+    sleep_color_temp: 1000 # Color temperature in sleep mode (used when sleep_rgb_or_color_temp is color_temp) in Kelvin. Default: 1000 😴
+    sleep_rgb_color: [255, 56, 0]  # RGB color in sleep mode (used when sleep_rgb_or_color_temp is "rgb_color"). Default: [255, 56, 0] 🌈
+    sleep_transition: 1  # Duration of transition when "sleep mode" is toggled in seconds. Default: 1 😴
+    transition_until_sleep: false  # When enabled, Adaptive Lighting will treat sleep settings as the minimum, transitioning to these values after sunset. Default: False 🌙
+    sunrise_time:   # Set a fixed time (HH:MM:SS) for sunrise. Default: None  🌅
+    min_sunrise_time:   # Set the earliest virtual sunrise time (HH:MM:SS), allowing for later sunrises. Default: None  🌅
+    max_sunrise_time:   # Set the latest virtual sunrise time (HH:MM:SS), allowing for earlier sunrises. Default: None  🌅
+    sunrise_offset: 3200  # Adjust sunrise time with a positive or negative offset in seconds. Default: 0 ⏰
+    sunset_time:   # Set a fixed time (HH:MM:SS) for sunset. Default: None  🌇
+    min_sunset_time:   # Set the earliest virtual sunset time (HH:MM:SS), allowing for later sunsets. Default: None  🌇
+    max_sunset_time:   # Set the latest virtual sunset time (HH:MM:SS), allowing for earlier sunsets. Default: None  🌇
+    sunset_offset: 1800  # Adjust sunset time with a positive or negative offset in seconds. Default: 0  ⏰
+    take_over_control: true  # Disable Adaptive Lighting if another source calls light.turn_on while lights are on and being adapted. Note that this calls homeassistant.update_entity every interval! Default: True  🔒
+    detect_non_ha_changes: false  # Detects and halts adaptations for non-light.turn_on state changes. Needs take_over_control enabled. Default: False  🕵️ Caution: ⚠️ Some lights might falsely indicate an 'on' state, which could result in lights turning on unexpectedly. Disable this feature if you encounter such issues.
+    autoreset_control_seconds: 0  # Automatically reset the manual control after a number of seconds. Set to 0 to disable. Default: 0  ⏲️
+    only_once: false  # Adapt lights only when they are turned on (true) or keep adapting them (false). Default: False  🔄
+    adapt_only_on_bare_turn_on: false  # When turning lights on initially. If set to true, AL adapts only if light.turn_on is invoked without specifying color or brightness. Default: False   ❌🌈 This e.g., prevents adaptation when activating a scene. If false, AL adapts regardless of the presence of color or brightness in the initial service_data. Needs take_over_control enabled. 🕵️
+    separate_turn_on_commands: false  # Use separate light.turn_on calls for color and brightness, needed for some light types. Default: False  🔀
+    send_split_delay: 0  # Delay (ms) between separate_turn_on_commands for lights that don't support simultaneous brightness and color setting. Default: 0  ⏲️
+    adapt_delay: 0  # Wait time (seconds) between light turn on and Adaptive Lighting applying changes. Might help to avoid flickering. Default: 0  ⏲️
+    skip_redundant_commands: true  # Skip sending adaptation commands whose target state already equals the light's known state. Minimizes network traffic and improves the adaptation responsivity in some situations. Default: False  📉Disable if physical light states get out of sync with HA's recorded state.
+    intercept: true # Intercept and adapt light.turn_on calls to enabling instantaneous color and brightness adaptation. Default: True  🏎️ Disable for lights that do not support light.turn_on with color and brightness.
+    multi_light_intercept: true  # Intercept and adapt light.turn_on calls that target multiple lights. Default: True  ➗⚠️ This might result in splitting up a single light.turn_on call into multiple calls, e.g., when lights are in different switches. Requires intercept to be enabled.
+    include_config_in_attributes: true  # Show all options as attributes on the switch in Home Assistant when set to true. Default:  📝
 
 ## External Main Zone Lighting ##
 adaptive_lighting_external_zone_main:
   - name: "Main Zone External Lighting" # You can rename your switch's display name in Home Assistant's UI.
-    lights: # List of light entity_ids to be controlled (may be empty). 🌟
+    lights: # List of light entity_ids to be controlled (may be empty). Default: [] 🌟
       - light.battens_external_garage
       - light.downlights_external_porch
-    interval: 90 # Frequency to adapt the lights, in seconds. 🔄 Note: The interval is used only once when the config loads. A config change and restart are required.
-    transition: 45 # Duration of transition when lights change, in seconds. 🕑
-    initial_transition: 1 # Duration of the first transition when lights turn from off to on in seconds. ⏲️
-    min_brightness: 50 # Minimum brightness percentage. 💡
-    max_brightness: 100 # Maximum brightness percentage. 💡
-    min_color_temp: 2500 # Warmest color temperature in Kelvin. 🔥
-    max_color_temp: 6500 # Coldest color temperature in Kelvin. ❄️
-    prefer_rgb_color: false # Whether to prefer RGB color adjustment over light color temperature when possible. 🌈
-    sleep_brightness: 1 # Brightness percentage of lights in sleep mode. 😴
-    sleep_rgb_or_color_temp: rgb_color  # Use either "rgb_color" or "color_temp" in sleep mode. 🌙
-    sleep_color_temp: 1000 # Color temperature in sleep mode (used when sleep_rgb_or_color_temp is color_temp) in Kelvin. 😴
-    sleep_rgb_color: [39,38,84]  # RGB color in sleep mode (used when sleep_rgb_or_color_temp is "rgb_color"). 🌈
-    sleep_transition: 30  # Duration of transition when "sleep mode" is toggled in seconds. 😴
-    transition_until_sleep: false  # When enabled, Adaptive Lighting will treat sleep settings as the minimum, transitioning to these values after sunset. 🌙
-    sunrise_time: "None"  # Set a fixed time (HH:MM:SS) for sunrise. Default: "None" 🌅
-    min_sunrise_time: "None"  # Set the earliest virtual sunrise time (HH:MM:SS), allowing for later sunrises. Default: "None" 🌅
-    max_sunrise_time: "None"  # Set the latest virtual sunrise time (HH:MM:SS), allowing for earlier sunrises. Default: "None" 🌅
-    sunrise_offset: 3200  # Adjust sunrise time with a positive or negative offset in seconds. ⏰
-    sunset_time: "None"  # Set a fixed time (HH:MM:SS) for sunset. Default: "None" 🌇
-    min_sunset_time: "None"  # Set the earliest virtual sunset time (HH:MM:SS), allowing for later sunsets. Default: "None" 🌇
-    max_sunset_time: "None"  # Set the latest virtual sunset time (HH:MM:SS), allowing for earlier sunsets. Default: "None" 🌇
-    sunset_offset: 1800  # Adjust sunset time with a positive or negative offset in seconds. ⏰
-    take_over_control: true  # Disable Adaptive Lighting if another source calls light.turn_on while lights are on and being adapted. Note that this calls homeassistant.update_entity every interval! 🔒
-    detect_non_ha_changes: false  # Detects and halts adaptations for non-light.turn_on state changes. Needs take_over_control enabled. 🕵️ Caution: ⚠️ Some lights might falsely indicate an 'on' state, which could result in lights turning on unexpectedly. Disable this feature if you encounter such issues.
-    autoreset_control_seconds: 0  # Automatically reset the manual control after a number of seconds. Set to 0 to disable. ⏲️
-    only_once: false  # Adapt lights only when they are turned on (true) or keep adapting them (false). 🔄
-    adapt_only_on_bare_turn_on: false  # When turning lights on initially. If set to true, AL adapts only if light.turn_on is invoked without specifying color or brightness. ❌🌈 This e.g., prevents adaptation when activating a scene. If false, AL adapts regardless of the presence of color or brightness in the initial service_data. Needs take_over_control enabled. 🕵️
-    separate_turn_on_commands: false  # Use separate light.turn_on calls for color and brightness, needed for some light types. 🔀
-    send_split_delay: 0  # Delay (ms) between separate_turn_on_commands for lights that don't support simultaneous brightness and color setting. ⏲️
-    adapt_delay: 0  # Wait time (seconds) between light turn on and Adaptive Lighting applying changes. Might help to avoid flickering. ⏲️
-    skip_redundant_commands: true  # Skip sending adaptation commands whose target state already equals the light's known state. Minimizes network traffic and improves the adaptation responsivity in some situations. 📉Disable if physical light states get out of sync with HA's recorded state.
-    intercept: true # Intercept and adapt light.turn_on calls to enabling instantaneous color and brightness adaptation. 🏎️ Disable for lights that do not support light.turn_on with color and brightness.
-    multi_light_intercept: true  # Intercept and adapt light.turn_on calls that target multiple lights. ➗⚠️ This might result in splitting up a single light.turn_on call into multiple calls, e.g., when lights are in different switches. Requires intercept to be enabled.
+    interval: 90 # Frequency to adapt the lights, in seconds. Default: 90 🔄 Note: The interval is used only once when the config loads. A config change and restart are required.
+    transition: 45 # Duration of transition when lights change, in seconds. Default: 45 🕑
+    initial_transition: 1 # Duration of the first transition when lights turn from off to on in seconds. Default: 1 ⏲️
+    min_brightness: 50 # Minimum brightness percentage. Default: 1 💡
+    max_brightness: 100 # Maximum brightness percentage. Default: 100 💡
+    min_color_temp: 2500 # Warmest color temperature in Kelvin. Default: 2000 🔥
+    max_color_temp: 6500 # Coldest color temperature in Kelvin. Default: 5500 ❄️
+    prefer_rgb_color: false # Whether to prefer RGB color adjustment over light color temperature when possible. Default: False 🌈
+    sleep_brightness: 1 # Brightness percentage of lights in sleep mode. Default: 1 😴
+    sleep_rgb_or_color_temp: rgb_color  # Use either "rgb_color" or "color_temp" in sleep mode. Default: color_temp 🌙
+    sleep_color_temp: 1000 # Color temperature in sleep mode (used when sleep_rgb_or_color_temp is color_temp) in Kelvin. Default: 1000 😴
+    sleep_rgb_color: [39,38,84]  # RGB color in sleep mode (used when sleep_rgb_or_color_temp is "rgb_color"). Default: [255, 56, 0] 🌈
+    sleep_transition: 30  # Duration of transition when "sleep mode" is toggled in seconds. Default: 1 😴
+    transition_until_sleep: false  # When enabled, Adaptive Lighting will treat sleep settings as the minimum, transitioning to these values after sunset. Default: False 🌙
+    sunrise_time:   # Set a fixed time (HH:MM:SS) for sunrise. Default: None  🌅
+    min_sunrise_time:   # Set the earliest virtual sunrise time (HH:MM:SS), allowing for later sunrises. Default: None  🌅
+    max_sunrise_time:   # Set the latest virtual sunrise time (HH:MM:SS), allowing for earlier sunrises. Default: None  🌅
+    sunrise_offset: 3200  # Adjust sunrise time with a positive or negative offset in seconds. Default: 0 ⏰
+    sunset_time:   # Set a fixed time (HH:MM:SS) for sunset. Default: None  🌇
+    min_sunset_time:   # Set the earliest virtual sunset time (HH:MM:SS), allowing for later sunsets. Default: None  🌇
+    max_sunset_time:   # Set the latest virtual sunset time (HH:MM:SS), allowing for earlier sunsets. Default: None  🌇
+    sunset_offset: 1800  # Adjust sunset time with a positive or negative offset in seconds. Default: 0 ⏰
+    take_over_control: true  # Disable Adaptive Lighting if another source calls light.turn_on while lights are on and being adapted. Note that this calls homeassistant.update_entity every interval! Default: True 🔒
+    detect_non_ha_changes: false  # Detects and halts adaptations for non-light.turn_on state changes. Needs take_over_control enabled. Default: False 🕵️ Caution: ⚠️ Some lights might falsely indicate an 'on' state, which could result in lights turning on unexpectedly. Disable this feature if you encounter such issues.
+    autoreset_control_seconds: 0  # Automatically reset the manual control after a number of seconds. Set to 0 to disable. Default: 0 ⏲️
+    only_once: false  # Adapt lights only when they are turned on (true) or keep adapting them (false). Default: False 🔄
+    adapt_only_on_bare_turn_on: false  # When turning lights on initially. If set to true, AL adapts only if light.turn_on is invoked without specifying color or brightness. Default: False ❌🌈 This e.g., prevents adaptation when activating a scene. If false, AL adapts regardless of the presence of color or brightness in the initial service_data. Needs take_over_control enabled. 🕵️
+    separate_turn_on_commands: false  # Use separate light.turn_on calls for color and brightness, needed for some light types. Default: False 🔀
+    send_split_delay: 0  # Delay (ms) between separate_turn_on_commands for lights that don't support simultaneous brightness and color setting. Default: 0 ⏲️
+    adapt_delay: 0  # Wait time (seconds) between light turn on and Adaptive Lighting applying changes. Might help to avoid flickering. Default: 0 ⏲️
+    skip_redundant_commands: true  # Skip sending adaptation commands whose target state already equals the light's known state. Minimizes network traffic and improves the adaptation responsivity in some situations. Default: False 📉Disable if physical light states get out of sync with HA's recorded state.
+    intercept: true # Intercept and adapt light.turn_on calls to enabling instantaneous color and brightness adaptation. Default: True 🏎️ Disable for lights that do not support light.turn_on with color and brightness.
+    multi_light_intercept: true  # Intercept and adapt light.turn_on calls that target multiple lights. Default: True ➗⚠️ This might result in splitting up a single light.turn_on call into multiple calls, e.g., when lights are in different switches. Requires intercept to be enabled.
     include_config_in_attributes: true  # Show all options as attributes on the switch in Home Assistant when set to true. 📝
 
 ## Internal Living Zone Lighting ##
 adaptive_lighting_internal_zone_living:
   - name: "Internal Living Zone Lighting" # You can rename your switch's display name in Home Assistant's UI.
-    lights: # List of light entity_ids to be controlled (may be empty). 🌟
+    lights: # List of light entity_ids to be controlled (may be empty). Default: [] 🌟
   #    - light.downlights_internal_alcove
   #    - light.downlights_internal_bedroom
       - light.downlights_internal_hallway
       - light.downlights_internal_lounge_room
-    interval: 90 # Frequency to adapt the lights, in seconds. 🔄 Note: The interval is used only once when the config loads. A config change and restart are required.
-    transition: 45 # Duration of transition when lights change, in seconds. 🕑
-    initial_transition: 1 # Duration of the first transition when lights turn from off to on in seconds. ⏲️
-    min_brightness: 50 # Minimum brightness percentage. 💡
-    max_brightness: 100 # Maximum brightness percentage. 💡
-    min_color_temp: 2500 # Warmest color temperature in Kelvin. 🔥
-    max_color_temp: 6500 # Coldest color temperature in Kelvin. ❄️
-    prefer_rgb_color: false # Whether to prefer RGB color adjustment over light color temperature when possible. 🌈
-    sleep_brightness: 1 # Brightness percentage of lights in sleep mode. 😴
-    sleep_rgb_or_color_temp: rgb_color  # Use either "rgb_color" or "color_temp" in sleep mode. 🌙
-    sleep_color_temp: 1000 # Color temperature in sleep mode (used when sleep_rgb_or_color_temp is color_temp) in Kelvin. 😴
-    sleep_rgb_color: [39,38,84]  # RGB color in sleep mode (used when sleep_rgb_or_color_temp is "rgb_color"). 🌈
-    sleep_transition: 30  # Duration of transition when "sleep mode" is toggled in seconds. 😴
-    transition_until_sleep: false  # When enabled, Adaptive Lighting will treat sleep settings as the minimum, transitioning to these values after sunset. 🌙
-    sunrise_time: "None"  # Set a fixed time (HH:MM:SS) for sunrise. Default: "None" 🌅
-    min_sunrise_time: "None"  # Set the earliest virtual sunrise time (HH:MM:SS), allowing for later sunrises. Default: "None" 🌅
-    max_sunrise_time: "None"  # Set the latest virtual sunrise time (HH:MM:SS), allowing for earlier sunrises. Default: "None" 🌅
-    sunrise_offset: 3200  # Adjust sunrise time with a positive or negative offset in seconds. ⏰
-    sunset_time: "None"  # Set a fixed time (HH:MM:SS) for sunset. Default: "None" 🌇
-    min_sunset_time: "None"  # Set the earliest virtual sunset time (HH:MM:SS), allowing for later sunsets. Default: "None" 🌇
-    max_sunset_time: "None"  # Set the latest virtual sunset time (HH:MM:SS), allowing for earlier sunsets. Default: "None" 🌇
-    sunset_offset: 7600  # Adjust sunset time with a positive or negative offset in seconds. ⏰
-    take_over_control: true  # Disable Adaptive Lighting if another source calls light.turn_on while lights are on and being adapted. Note that this calls homeassistant.update_entity every interval! 🔒
-    detect_non_ha_changes: false  # Detects and halts adaptations for non-light.turn_on state changes. Needs take_over_control enabled. 🕵️ Caution: ⚠️ Some lights might falsely indicate an 'on' state, which could result in lights turning on unexpectedly. Disable this feature if you encounter such issues.
-    autoreset_control_seconds: 0  # Automatically reset the manual control after a number of seconds. Set to 0 to disable. ⏲️
-    only_once: false  # Adapt lights only when they are turned on (true) or keep adapting them (false). 🔄
-    adapt_only_on_bare_turn_on: false  # When turning lights on initially. If set to true, AL adapts only if light.turn_on is invoked without specifying color or brightness. ❌🌈 This e.g., prevents adaptation when activating a scene. If false, AL adapts regardless of the presence of color or brightness in the initial service_data. Needs take_over_control enabled. 🕵️
-    separate_turn_on_commands: false  # Use separate light.turn_on calls for color and brightness, needed for some light types. 🔀
-    send_split_delay: 0  # Delay (ms) between separate_turn_on_commands for lights that don't support simultaneous brightness and color setting. ⏲️
-    adapt_delay: 0  # Wait time (seconds) between light turn on and Adaptive Lighting applying changes. Might help to avoid flickering. ⏲️
-    skip_redundant_commands: true  # Skip sending adaptation commands whose target state already equals the light's known state. Minimizes network traffic and improves the adaptation responsivity in some situations. 📉Disable if physical light states get out of sync with HA's recorded state.
-    intercept: true # Intercept and adapt light.turn_on calls to enabling instantaneous color and brightness adaptation. 🏎️ Disable for lights that do not support light.turn_on with color and brightness.
-    multi_light_intercept: true  # Intercept and adapt light.turn_on calls that target multiple lights. ➗⚠️ This might result in splitting up a single light.turn_on call into multiple calls, e.g., when lights are in different switches. Requires intercept to be enabled.
+    interval: 90 # Frequency to adapt the lights, in seconds. Default: 90 🔄 Note: The interval is used only once when the config loads. A config change and restart are required.
+    transition: 45 # Duration of transition when lights change, in seconds. Default: 45 🕑
+    initial_transition: 1 # Duration of the first transition when lights turn from off to on in seconds. Default: 1 ⏲️
+    min_brightness: 50 # Minimum brightness percentage. Default: 1 💡
+    max_brightness: 100 # Maximum brightness percentage. Default: 100 💡
+    min_color_temp: 2500 # Warmest color temperature in Kelvin. Default: 2000 🔥
+    max_color_temp: 6500 # Coldest color temperature in Kelvin. Default: 5500 ❄️
+    prefer_rgb_color: false # Whether to prefer RGB color adjustment over light color temperature when possible. Default: False 🌈
+    sleep_brightness: 1 # Brightness percentage of lights in sleep mode. Default: 1 😴
+    sleep_rgb_or_color_temp: rgb_color  # Use either "rgb_color" or "color_temp" in sleep mode. Default: color_temp 🌙
+    sleep_color_temp: 1000 # Color temperature in sleep mode (used when sleep_rgb_or_color_temp is color_temp) in Kelvin. Default: 1000 😴
+    sleep_rgb_color: [39,38,84]  # RGB color in sleep mode (used when sleep_rgb_or_color_temp is "rgb_color"). Default: [255, 56, 0] 🌈
+    sleep_transition: 30  # Duration of transition when "sleep mode" is toggled in seconds. Default: 1 😴
+    transition_until_sleep: false  # When enabled, Adaptive Lighting will treat sleep settings as the minimum, transitioning to these values after sunset. Default: False 🌙
+    sunrise_time:   # Set a fixed time (HH:MM:SS) for sunrise. Default: None  🌅
+    min_sunrise_time:   # Set the earliest virtual sunrise time (HH:MM:SS), allowing for later sunrises. Default: None  🌅
+    max_sunrise_time:   # Set the latest virtual sunrise time (HH:MM:SS), allowing for earlier sunrises. Default: None  🌅
+    sunrise_offset: 3200  # Adjust sunrise time with a positive or negative offset in seconds. Default: 0 ⏰
+    sunset_time:   # Set a fixed time (HH:MM:SS) for sunset. Default: None  🌇
+    min_sunset_time:   # Set the earliest virtual sunset time (HH:MM:SS), allowing for later sunsets. Default: None  🌇
+    max_sunset_time:   # Set the latest virtual sunset time (HH:MM:SS), allowing for earlier sunsets. Default: None  🌇
+    sunset_offset: 7600  # Adjust sunset time with a positive or negative offset in seconds. Default: 0 ⏰
+    take_over_control: true  # Disable Adaptive Lighting if another source calls light.turn_on while lights are on and being adapted. Note that this calls homeassistant.update_entity every interval! Default: True 🔒
+    detect_non_ha_changes: false  # Detects and halts adaptations for non-light.turn_on state changes. Needs take_over_control enabled. Default: False 🕵️ Caution: ⚠️ Some lights might falsely indicate an 'on' state, which could result in lights turning on unexpectedly. Disable this feature if you encounter such issues.
+    autoreset_control_seconds: 0  # Automatically reset the manual control after a number of seconds. Set to 0 to disable. Default: 0 ⏲️
+    only_once: false  # Adapt lights only when they are turned on (true) or keep adapting them (false). Default: False 🔄
+    adapt_only_on_bare_turn_on: false  # When turning lights on initially. If set to true, AL adapts only if light.turn_on is invoked without specifying color or brightness. Default: False ❌🌈 This e.g., prevents adaptation when activating a scene. If false, AL adapts regardless of the presence of color or brightness in the initial service_data. Needs take_over_control enabled. 🕵️
+    separate_turn_on_commands: false  # Use separate light.turn_on calls for color and brightness, needed for some light types. Default: False 🔀
+    send_split_delay: 0  # Delay (ms) between separate_turn_on_commands for lights that don't support simultaneous brightness and color setting. Default: 0 ⏲️
+    adapt_delay: 0  # Wait time (seconds) between light turn on and Adaptive Lighting applying changes. Might help to avoid flickering. Default: 0 ⏲️
+    skip_redundant_commands: true  # Skip sending adaptation commands whose target state already equals the light's known state. Minimizes network traffic and improves the adaptation responsivity in some situations. Default: False 📉Disable if physical light states get out of sync with HA's recorded state.
+    intercept: true # Intercept and adapt light.turn_on calls to enabling instantaneous color and brightness adaptation. Default: True 🏎️ Disable for lights that do not support light.turn_on with color and brightness.
+    multi_light_intercept: true  # Intercept and adapt light.turn_on calls that target multiple lights. Default: True ➗⚠️ This might result in splitting up a single light.turn_on call into multiple calls, e.g., when lights are in different switches. Requires intercept to be enabled.
     include_config_in_attributes: true  # Show all options as attributes on the switch in Home Assistant when set to true. 📝
 
 ## Internal Utility Zone Lighting ##
 adaptive_lighting_internal_zone_utility:
   - name: "Internal Utility Zone" # You can rename your switch's display name in Home Assistant's UI.
-    lights: # List of light entity_ids to be controlled (may be empty). 🌟
+    lights: # List of light entity_ids to be controlled (may be empty). Default: [] 🌟
       - light.downlights_internal_foyer_front
   #    - light.downlights_internal_hallway
   #    - light.downlights_internal_kitchen
   #    - light.downlights_internal_laundry
-    interval: 90 # Frequency to adapt the lights, in seconds. 🔄 Note: The interval is used only once when the config loads. A config change and restart are required.
-    transition: 45 # Duration of transition when lights change, in seconds. 🕑
+    interval: 90 # Frequency to adapt the lights, in seconds. Default: 90 🔄 Note: The interval is used only once when the config loads. A config change and restart are required.
+    transition: 45 # Duration of transition when lights change, in seconds. Default: 45 🕑
     initial_transition: 1 # Duration of the first transition when lights turn from off to on in seconds. ⏲️
-    min_brightness: 75 # Minimum brightness percentage. 💡
-    max_brightness: 100 # Maximum brightness percentage. 💡
-    min_color_temp: 5500 # Warmest color temperature in Kelvin. 🔥
-    max_color_temp: 6500 # Coldest color temperature in Kelvin. ❄️
-    prefer_rgb_color: false # Whether to prefer RGB color adjustment over light color temperature when possible. 🌈
-    sleep_brightness: 1 # Brightness percentage of lights in sleep mode. 😴
-    sleep_rgb_or_color_temp: rgb_color  # Use either "rgb_color" or "color_temp" in sleep mode. 🌙
+    min_brightness: 75 # Minimum brightness percentage. Default: 1 💡
+    max_brightness: 100 # Maximum brightness percentage. Default: 100 💡
+    min_color_temp: 5500 # Warmest color temperature in Kelvin. Default: 2000 🔥
+    max_color_temp: 6500 # Coldest color temperature in Kelvin. Default: 5500 ❄️
+    prefer_rgb_color: false # Whether to prefer RGB color adjustment over light color temperature when possible. Default: False 🌈
+    sleep_brightness: 1 # Brightness percentage of lights in sleep mode. Default: 1 😴
+    sleep_rgb_or_color_temp: rgb_color  # Use either "rgb_color" or "color_temp" in sleep mode. Default: color_temp 🌙
     sleep_color_temp: 1000 # Color temperature in sleep mode (used when sleep_rgb_or_color_temp is color_temp) in Kelvin. 😴
-    sleep_rgb_color: [39,38,84]  # RGB color in sleep mode (used when sleep_rgb_or_color_temp is "rgb_color"). 🌈
-    sleep_transition: 30  # Duration of transition when "sleep mode" is toggled in seconds. 😴
-    transition_until_sleep: false  # When enabled, Adaptive Lighting will treat sleep settings as the minimum, transitioning to these values after sunset. 🌙
-    sunrise_time: "None"  # Set a fixed time (HH:MM:SS) for sunrise. Default: "None" 🌅
-    min_sunrise_time: "None"  # Set the earliest virtual sunrise time (HH:MM:SS), allowing for later sunrises. Default: "None" 🌅
-    max_sunrise_time: "None"  # Set the latest virtual sunrise time (HH:MM:SS), allowing for earlier sunrises. Default: "None" 🌅
-    sunrise_offset: 3200  # Adjust sunrise time with a positive or negative offset in seconds. ⏰
-    sunset_time: "None"  # Set a fixed time (HH:MM:SS) for sunset. Default: "None" 🌇
-    min_sunset_time: "None"  # Set the earliest virtual sunset time (HH:MM:SS), allowing for later sunsets. Default: "None" 🌇
-    max_sunset_time: "None"  # Set the latest virtual sunset time (HH:MM:SS), allowing for earlier sunsets. Default: "None" 🌇
-    sunset_offset: 1800  # Adjust sunset time with a positive or negative offset in seconds. ⏰
-    take_over_control: true  # Disable Adaptive Lighting if another source calls light.turn_on while lights are on and being adapted. Note that this calls homeassistant.update_entity every interval! 🔒
-    detect_non_ha_changes: false  # Detects and halts adaptations for non-light.turn_on state changes. Needs take_over_control enabled. 🕵️ Caution: ⚠️ Some lights might falsely indicate an 'on' state, which could result in lights turning on unexpectedly. Disable this feature if you encounter such issues.
-    autoreset_control_seconds: 0  # Automatically reset the manual control after a number of seconds. Set to 0 to disable. ⏲️
-    only_once: false  # Adapt lights only when they are turned on (true) or keep adapting them (false). 🔄
-    adapt_only_on_bare_turn_on: false  # When turning lights on initially. If set to true, AL adapts only if light.turn_on is invoked without specifying color or brightness. ❌🌈 This e.g., prevents adaptation when activating a scene. If false, AL adapts regardless of the presence of color or brightness in the initial service_data. Needs take_over_control enabled. 🕵️
-    separate_turn_on_commands: false  # Use separate light.turn_on calls for color and brightness, needed for some light types. 🔀
-    send_split_delay: 0  # Delay (ms) between separate_turn_on_commands for lights that don't support simultaneous brightness and color setting. ⏲️
-    adapt_delay: 0  # Wait time (seconds) between light turn on and Adaptive Lighting applying changes. Might help to avoid flickering. ⏲️
-    skip_redundant_commands: true  # Skip sending adaptation commands whose target state already equals the light's known state. Minimizes network traffic and improves the adaptation responsivity in some situations. 📉Disable if physical light states get out of sync with HA's recorded state.
-    intercept: true # Intercept and adapt light.turn_on calls to enabling instantaneous color and brightness adaptation. 🏎️ Disable for lights that do not support light.turn_on with color and brightness.
-    multi_light_intercept: true  # Intercept and adapt light.turn_on calls that target multiple lights. ➗⚠️ This might result in splitting up a single light.turn_on call into multiple calls, e.g., when lights are in different switches. Requires intercept to be enabled.
+    sleep_rgb_color: [39,38,84]  # RGB color in sleep mode (used when sleep_rgb_or_color_temp is "rgb_color"). Default: [255, 56, 0] 🌈
+    sleep_transition: 30  # Duration of transition when "sleep mode" is toggled in seconds. Default: 1 😴
+    transition_until_sleep: false  # When enabled, Adaptive Lighting will treat sleep settings as the minimum, transitioning to these values after sunset. Default: False 🌙
+    sunrise_time:   # Set a fixed time (HH:MM:SS) for sunrise. Default: None  🌅
+    min_sunrise_time:   # Set the earliest virtual sunrise time (HH:MM:SS), allowing for later sunrises. Default: None  🌅
+    max_sunrise_time:   # Set the latest virtual sunrise time (HH:MM:SS), allowing for earlier sunrises. Default: None  🌅
+    sunrise_offset: 3200  # Adjust sunrise time with a positive or negative offset in seconds. Default: 0 ⏰
+    sunset_time:   # Set a fixed time (HH:MM:SS) for sunset. Default: None  🌇
+    min_sunset_time:   # Set the earliest virtual sunset time (HH:MM:SS), allowing for later sunsets. Default: None  🌇
+    max_sunset_time:   # Set the latest virtual sunset time (HH:MM:SS), allowing for earlier sunsets. Default: None  🌇
+    sunset_offset: 1800  # Adjust sunset time with a positive or negative offset in seconds. Default: 0 ⏰
+    take_over_control: true  # Disable Adaptive Lighting if another source calls light.turn_on while lights are on and being adapted. Note that this calls homeassistant.update_entity every interval! Default: True 🔒
+    detect_non_ha_changes: false  # Detects and halts adaptations for non-light.turn_on state changes. Needs take_over_control enabled. Default: False 🕵️ Caution: ⚠️ Some lights might falsely indicate an 'on' state, which could result in lights turning on unexpectedly. Disable this feature if you encounter such issues.
+    autoreset_control_seconds: 0  # Automatically reset the manual control after a number of seconds. Set to 0 to disable. Default: 0 ⏲️
+    only_once: false  # Adapt lights only when they are turned on (true) or keep adapting them (false). Default: False 🔄
+    adapt_only_on_bare_turn_on: false  # When turning lights on initially. If set to true, AL adapts only if light.turn_on is invoked without specifying color or brightness. Default: False ❌🌈 This e.g., prevents adaptation when activating a scene. If false, AL adapts regardless of the presence of color or brightness in the initial service_data. Needs take_over_control enabled. 🕵️
+    separate_turn_on_commands: false  # Use separate light.turn_on calls for color and brightness, needed for some light types. Default: False 🔀
+    send_split_delay: 0  # Delay (ms) between separate_turn_on_commands for lights that don't support simultaneous brightness and color setting. Default: 0 ⏲️
+    adapt_delay: 0  # Wait time (seconds) between light turn on and Adaptive Lighting applying changes. Might help to avoid flickering. Default: 0 ⏲️
+    skip_redundant_commands: true  # Skip sending adaptation commands whose target state already equals the light's known state. Minimizes network traffic and improves the adaptation responsivity in some situations. Default: False 📉Disable if physical light states get out of sync with HA's recorded state.
+    intercept: true # Intercept and adapt light.turn_on calls to enabling instantaneous color and brightness adaptation. Default: True 🏎️ Disable for lights that do not support light.turn_on with color and brightness.
+    multi_light_intercept: true  # Intercept and adapt light.turn_on calls that target multiple lights. Default: True ➗⚠️ This might result in splitting up a single light.turn_on call into multiple calls, e.g., when lights are in different switches. Requires intercept to be enabled.
     include_config_in_attributes: true  # Show all options as attributes on the switch in Home Assistant when set to true. 📝
 
