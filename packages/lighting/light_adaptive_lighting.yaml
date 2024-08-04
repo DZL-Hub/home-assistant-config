@@ -49,8 +49,7 @@ adaptive_lighting:
 adaptive_lighting_external_zone_main:
   - name: "Main Zone External Lighting" # You can rename your switch's display name in Home Assistant's UI.
     lights: # List of light entity_ids to be controlled (may be empty). Default: [] 🌟
-      - light.battens_external_garage
-      - light.downlights_external_porch
+      - light.lights_external_zone_main
     interval: 90 # Frequency to adapt the lights, in seconds. Default: 90 🔄 Note: The interval is used only once when the config loads. A config change and restart are required.
     transition: 45 # Duration of transition when lights change, in seconds. Default: 45 🕑
     initial_transition: 1 # Duration of the first transition when lights turn from off to on in seconds. Default: 1 ⏲️
@@ -90,10 +89,7 @@ adaptive_lighting_external_zone_main:
 adaptive_lighting_internal_zone_living:
   - name: "Internal Living Zone Lighting" # You can rename your switch's display name in Home Assistant's UI.
     lights: # List of light entity_ids to be controlled (may be empty). Default: [] 🌟
-  #    - light.downlights_internal_alcove
-  #    - light.downlights_internal_bedroom
-      - light.downlights_internal_hallway
-      - light.downlights_internal_lounge_room
+      - light.lights_internal_zone_living
     interval: 90 # Frequency to adapt the lights, in seconds. Default: 90 🔄 Note: The interval is used only once when the config loads. A config change and restart are required.
     transition: 45 # Duration of transition when lights change, in seconds. Default: 45 🕑
     initial_transition: 1 # Duration of the first transition when lights turn from off to on in seconds. Default: 1 ⏲️
@@ -133,10 +129,7 @@ adaptive_lighting_internal_zone_living:
 adaptive_lighting_internal_zone_utility:
   - name: "Internal Utility Zone" # You can rename your switch's display name in Home Assistant's UI.
     lights: # List of light entity_ids to be controlled (may be empty). Default: [] 🌟
-      - light.downlights_internal_foyer_front
-  #    - light.downlights_internal_hallway
-  #    - light.downlights_internal_kitchen
-  #    - light.downlights_internal_laundry
+      - light.lights_internal_zone_utility
     interval: 90 # Frequency to adapt the lights, in seconds. Default: 90 🔄 Note: The interval is used only once when the config loads. A config change and restart are required.
     transition: 45 # Duration of transition when lights change, in seconds. Default: 45 🕑
     initial_transition: 1 # Duration of the first transition when lights turn from off to on in seconds. ⏲️
