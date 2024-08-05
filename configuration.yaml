@@ -32,6 +32,7 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 
 # Custom Includes #
+adaptive_lighting: !include adaptive_lighting.yaml
 group: !include groups.yaml
 input_boolean: !include input_boolean.yaml
 input_datetime: !include input_datetime.yaml
