@@ -47,8 +47,8 @@ template: !include template.yaml
 zone:
   # This will override the default home zone
   - name: Home
-    latitude: -38.2412
-    longitude: 146.4017
+    latitude: -38.241163183566314
+    longitude: 146.40161991119388
     radius: 15
     icon: mdi:home
 
