@@ -1,4 +1,20 @@
-- id: '1721558556926'
+- id: '1721661135970'
+  alias: Presence Lighting
+  description: Lighting automated by presence
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.presence
+    to: 'on'
+  condition: []
+  action:
+  - service: input_boolean.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: input_boolean.adaptive_lighting_presence
+  mode: single
+- id: '1723017555659'
   alias: Tap/Dial Switch
   description: ''
   trigger:
@@ -15,24 +31,26 @@
       attribute: event_type
       state: short_release
     then:
-    - service: light.toggle
-      metadata: {}
+    - metadata: {}
       data: {}
       target:
-        entity_id: light.lights_garage
+        entity_id:
+        - light.lights_external_garage
+      action: light.toggle
     else:
-    - if:
+    - alias: Front Foyer Button 2 is Short-pressed
+      if:
       - condition: state
         entity_id: event.button_front_foyer_2
         attribute: event_type
         state: short_release
       then:
-      - service: light.toggle
-        metadata: {}
+      - metadata: {}
         data: {}
         target:
-          entity_id: light.lights_porch_front
-      alias: Front Foyer Button 2 is Short-pressed
+          entity_id:
+          - light.downlights_external_porch
+        action: light.toggle
     - alias: Front Foyer Button 3 is Short-pressed
       if:
       - condition: state
@@ -40,12 +58,12 @@
         attribute: event_type
         state: short_release
       then:
-      - service: light.toggle
-        metadata: {}
+      - metadata: {}
         data: {}
         target:
           entity_id:
-          - light.downlights_lounge_room
+          - light.downlights_internal_lounge_room
+        action: light.toggle
     - alias: Front Foyer Button 4 is Short-pressed
       if:
       - condition: state
@@ -53,11 +71,12 @@
         attribute: event_type
         state: short_release
       then:
-      - service: light.toggle
-        metadata: {}
+      - metadata: {}
         data: {}
         target:
-          entity_id: light.lights_foyer_front
+          entity_id:
+          - light.downlights_internal_foyer_front
+        action: light.toggle
     - alias: Front Foyer Dial is turned clockwise
       if:
       - condition: state
@@ -65,13 +84,13 @@
         attribute: event_type
         state: clock_wise
       then:
-      - service: light.turn_on
-        metadata: {}
+      - metadata: {}
         data:
           brightness_step_pct: 1
           brightness_pct: 1
         target:
           entity_id: light.downlights_internal_lounge_room
+        action: light.turn_on
       else:
       - if:
         - condition: state
@@ -79,12 +98,12 @@
           attribute: event_type
           state: counter_clock_wise
         then:
-        - service: light.turn_on
-          target:
+        - target:
             entity_id:
             - light.downlights_internal_lounge_room
           data:
             brightness_step_pct: -1
+          action: light.turn_on
   - if:
     - condition: state
       entity_id: input_boolean.presence
@@ -97,11 +116,11 @@
         attribute: event_type
         state: short_release
       then:
-      - service: light.toggle
-        metadata: {}
+      - metadata: {}
         data: {}
         target:
           entity_id: light.battens_external_garage
+        action: light.toggle
       else:
       - alias: Front Foyer Button 2 is Short-pressed
         if:
@@ -110,11 +129,11 @@
           attribute: event_type
           state: short_release
         then:
-        - service: light.toggle
-          metadata: {}
+        - metadata: {}
           data: {}
           target:
             entity_id: light.downlights_external_porch
+          action: light.toggle
       - alias: Front Foyer Button 3 is Short-pressed
         if:
         - condition: state
@@ -122,12 +141,12 @@
           attribute: event_type
           state: short_release
         then:
-        - service: light.toggle
-          metadata: {}
+        - metadata: {}
           data: {}
           target:
             entity_id:
             - light.downlights_internal_lounge_room
+          action: light.toggle
       - alias: Front Foyer Button 4 is Short-pressed
         if:
         - condition: state
@@ -135,26 +154,10 @@
           attribute: event_type
           state: short_release
         then:
-        - service: light.toggle
-          metadata: {}
+        - metadata: {}
           data: {}
           target:
             entity_id:
             - light.downlights_internal_foyer_front
-  mode: single
-- id: '1721661135970'
-  alias: Presence Lighting
-  description: Lighting automated by presence
-  trigger:
-  - platform: state
-    entity_id:
-    - input_boolean.presence
-    to: 'on'
-  condition: []
-  action:
-  - service: input_boolean.turn_on
-    metadata: {}
-    data: {}
-    target:
-      entity_id: input_boolean.adaptive_lighting_presence
+          action: light.toggle
   mode: single
