@@ -1,7 +1,7 @@
 ###############################################################################
 #   @author         :   SchmittyD
 #   @created date   :   25/07/2024 (AEST)
-#   @edited date    :   31/07/2024 (AEST)
+#   @edited date    :   08/08/2024 (AEST)
 #   @package        :   Lighting
 #   @description    :   Adaptive Lighting
 ###############################################################################
@@ -50,7 +50,7 @@
     - light.lights_external_zone_main
   interval: 90 # Frequency to adapt the lights, in seconds. Default: 90 🔄 Note: The interval is used only once when the config loads. A config change and restart are required.
   transition: 45 # Duration of transition when lights change, in seconds. Default: 45 🕑
-  initial_transition: 1 # Duration of the first transition when lights turn from off to on in seconds. Default: 1 ⏲️
+  initial_transition: 300 # Duration of the first transition when lights turn from off to on in seconds. Default: 1 ⏲️
   min_brightness: 50 # Minimum brightness percentage. Default: 1 💡
   max_brightness: 100 # Maximum brightness percentage. Default: 100 💡
   min_color_temp: 2500 # Warmest color temperature in Kelvin. Default: 2000 🔥
@@ -65,12 +65,12 @@
   sunrise_time:   # Set a fixed time (HH:MM:SS) for sunrise. Default: None  🌅
   min_sunrise_time:   # Set the earliest virtual sunrise time (HH:MM:SS), allowing for later sunrises. Default: None  🌅
   max_sunrise_time:   # Set the latest virtual sunrise time (HH:MM:SS), allowing for earlier sunrises. Default: None  🌅
-  sunrise_offset: 3200  # Adjust sunrise time with a positive or negative offset in seconds. Default: 0 ⏰
+  sunrise_offset: 0  # Adjust sunrise time with a positive or negative offset in seconds. Default: 0 ⏰
   sunset_time:   # Set a fixed time (HH:MM:SS) for sunset. Default: None  🌇
   min_sunset_time:   # Set the earliest virtual sunset time (HH:MM:SS), allowing for later sunsets. Default: None  🌇
   max_sunset_time:   # Set the latest virtual sunset time (HH:MM:SS), allowing for earlier sunsets. Default: None  🌇
   sunset_offset: 1800  # Adjust sunset time with a positive or negative offset in seconds. Default: 0 ⏰
-  take_over_control: true  # Disable Adaptive Lighting if another source calls light.turn_on while lights are on and being adapted. Note that this calls homeassistant.update_entity every interval! Default: True 🔒
+  take_over_control: false  # Disable Adaptive Lighting if another source calls light.turn_on while lights are on and being adapted. Note that this calls homeassistant.update_entity every interval! Default: True 🔒
   detect_non_ha_changes: false  # Detects and halts adaptations for non-light.turn_on state changes. Needs take_over_control enabled. Default: False 🕵️ Caution: ⚠️ Some lights might falsely indicate an 'on' state, which could result in lights turning on unexpectedly. Disable this feature if you encounter such issues.
   autoreset_control_seconds: 0  # Automatically reset the manual control after a number of seconds. Set to 0 to disable. Default: 0 ⏲️
   only_once: false  # Adapt lights only when they are turned on (true) or keep adapting them (false). Default: False 🔄
@@ -89,7 +89,7 @@
     - light.lights_internal_zone_living
   interval: 90 # Frequency to adapt the lights, in seconds. Default: 90 🔄 Note: The interval is used only once when the config loads. A config change and restart are required.
   transition: 45 # Duration of transition when lights change, in seconds. Default: 45 🕑
-  initial_transition: 1 # Duration of the first transition when lights turn from off to on in seconds. Default: 1 ⏲️
+  initial_transition: 30 # Duration of the first transition when lights turn from off to on in seconds. Default: 1 ⏲️
   min_brightness: 50 # Minimum brightness percentage. Default: 1 💡
   max_brightness: 100 # Maximum brightness percentage. Default: 100 💡
   min_color_temp: 2500 # Warmest color temperature in Kelvin. Default: 2000 🔥
@@ -104,12 +104,12 @@
   sunrise_time:   # Set a fixed time (HH:MM:SS) for sunrise. Default: None  🌅
   min_sunrise_time:   # Set the earliest virtual sunrise time (HH:MM:SS), allowing for later sunrises. Default: None  🌅
   max_sunrise_time:   # Set the latest virtual sunrise time (HH:MM:SS), allowing for earlier sunrises. Default: None  🌅
-  sunrise_offset: 3200  # Adjust sunrise time with a positive or negative offset in seconds. Default: 0 ⏰
+  sunrise_offset: 3600  # Adjust sunrise time with a positive or negative offset in seconds. Default: 0 ⏰
   sunset_time:   # Set a fixed time (HH:MM:SS) for sunset. Default: None  🌇
   min_sunset_time:   # Set the earliest virtual sunset time (HH:MM:SS), allowing for later sunsets. Default: None  🌇
   max_sunset_time:   # Set the latest virtual sunset time (HH:MM:SS), allowing for earlier sunsets. Default: None  🌇
-  sunset_offset: 7600  # Adjust sunset time with a positive or negative offset in seconds. Default: 0 ⏰
-  take_over_control: true  # Disable Adaptive Lighting if another source calls light.turn_on while lights are on and being adapted. Note that this calls homeassistant.update_entity every interval! Default: True 🔒
+  sunset_offset: 7200  # Adjust sunset time with a positive or negative offset in seconds. Default: 0 ⏰
+  take_over_control: false  # Disable Adaptive Lighting if another source calls light.turn_on while lights are on and being adapted. Note that this calls homeassistant.update_entity every interval! Default: True 🔒
   detect_non_ha_changes: false  # Detects and halts adaptations for non-light.turn_on state changes. Needs take_over_control enabled. Default: False 🕵️ Caution: ⚠️ Some lights might falsely indicate an 'on' state, which could result in lights turning on unexpectedly. Disable this feature if you encounter such issues.
   autoreset_control_seconds: 0  # Automatically reset the manual control after a number of seconds. Set to 0 to disable. Default: 0 ⏲️
   only_once: false  # Adapt lights only when they are turned on (true) or keep adapting them (false). Default: False 🔄
@@ -128,7 +128,7 @@
     - light.lights_internal_zone_utility
   interval: 90 # Frequency to adapt the lights, in seconds. Default: 90 🔄 Note: The interval is used only once when the config loads. A config change and restart are required.
   transition: 45 # Duration of transition when lights change, in seconds. Default: 45 🕑
-  initial_transition: 1 # Duration of the first transition when lights turn from off to on in seconds. ⏲️
+  initial_transition: 5 # Duration of the first transition when lights turn from off to on in seconds. ⏲️
   min_brightness: 75 # Minimum brightness percentage. Default: 1 💡
   max_brightness: 100 # Maximum brightness percentage. Default: 100 💡
   min_color_temp: 5500 # Warmest color temperature in Kelvin. Default: 2000 🔥
@@ -148,7 +148,7 @@
   min_sunset_time:   # Set the earliest virtual sunset time (HH:MM:SS), allowing for later sunsets. Default: None  🌇
   max_sunset_time:   # Set the latest virtual sunset time (HH:MM:SS), allowing for earlier sunsets. Default: None  🌇
   sunset_offset: 1800  # Adjust sunset time with a positive or negative offset in seconds. Default: 0 ⏰
-  take_over_control: true  # Disable Adaptive Lighting if another source calls light.turn_on while lights are on and being adapted. Note that this calls homeassistant.update_entity every interval! Default: True 🔒
+  take_over_control: false  # Disable Adaptive Lighting if another source calls light.turn_on while lights are on and being adapted. Note that this calls homeassistant.update_entity every interval! Default: True 🔒
   detect_non_ha_changes: false  # Detects and halts adaptations for non-light.turn_on state changes. Needs take_over_control enabled. Default: False 🕵️ Caution: ⚠️ Some lights might falsely indicate an 'on' state, which could result in lights turning on unexpectedly. Disable this feature if you encounter such issues.
   autoreset_control_seconds: 0  # Automatically reset the manual control after a number of seconds. Set to 0 to disable. Default: 0 ⏲️
   only_once: false  # Adapt lights only when they are turned on (true) or keep adapting them (false). Default: False 🔄

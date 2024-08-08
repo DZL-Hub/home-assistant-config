@@ -69,11 +69,11 @@ panel_custom:
       ingress: core_configurator
 
 # Secrets #
-dan:
-  - authentication: basic
-    username: "dan"
-    password: !secret dan_password
-kiosk:
-  - authentication: basic
-    username: "kiosk"
-    password: !secret kiosk_password
+#dan:
+#  - authentication: basic
+#    username: "dan"
+#    password: !secret dan_password
+#kiosk:
+#  - authentication: basic
+#    username: "kiosk"
+#    password: !secret kiosk_password
