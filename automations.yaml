@@ -22,35 +22,30 @@
     entity_id:
     - input_boolean.adaptive_lighting_presence
     to: 'on'
-  condition: []
+  condition:
+  - condition: state
+    entity_id: event.button_front_foyer_1
+    attribute: event_type
+    state: short_release
   action:
+  - action: light.toggle
+    metadata: {}
+    data: {}
+    target:
+      entity_id: light.lights_external_garage
   - alias: Front Foyer Tap/Dial Switch
     if:
     - condition: state
-      entity_id: event.button_front_foyer_1
+      entity_id: event.button_front_foyer_2
       attribute: event_type
       state: short_release
     then:
     - metadata: {}
       data: {}
-      target:
-        entity_id:
-        - light.lights_external_garage
       action: light.toggle
+      target:
+        entity_id: light.downlights_external_porch_front
     else:
-    - alias: Front Foyer Button 2 is Short-pressed
-      if:
-      - condition: state
-        entity_id: event.button_front_foyer_2
-        attribute: event_type
-        state: short_release
-      then:
-      - metadata: {}
-        data: {}
-        target:
-          entity_id:
-          - light.downlights_external_porch
-        action: light.toggle
     - alias: Front Foyer Button 3 is Short-pressed
       if:
       - condition: state
