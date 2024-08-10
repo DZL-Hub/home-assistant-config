@@ -1,7 +1,7 @@
 ###############################################################################
 #   @author         :   SchmittyD
 #   @created date   :   15/07/2024 (AEST)
-#   @edited date    :   15/07/2024 (AEST)
+#   @edited date    :   10/08/2024 (AEST)
 #   @configuration  :   Configuration
 #   @description    :   Main configuration
 ###############################################################################
@@ -38,7 +38,7 @@ input_boolean: !include input_boolean.yaml
 input_datetime: !include input_datetime.yaml
 input_select: !include input_select.yaml
 light: !include lights.yaml
-#panel_custom: !include panels.yaml
+panel_custom: !include panels.yaml
 schedule: !include schedules.yaml
 switch: !include switches.yaml
 template: !include template.yaml
@@ -57,16 +57,16 @@ shell_command:
   git_push: /bin/bash /config/gitpush.sh
 
 # Custom Panels #
-panel_custom:
-  - name: ha_system
-    sidebar_title: System Info
-    sidebar_icon: mdi:information-variant
-    js_url: /api/hassio/app/entrypoint.js
-    url_path: "hassio/system/info"
-    embed_iframe: true
-    require_admin: true
-    config:
-      ingress: core_configurator
+#panel_custom:
+#  - name: ha_system
+#    sidebar_title: System Info
+#    sidebar_icon: mdi:information-variant
+#    js_url: /api/hassio/app/entrypoint.js
+#    url_path: "hassio/system/info"
+#    embed_iframe: true
+#    require_admin: true
+#    config:
+#      ingress: core_configurator
 
 # Secrets #
 #dan:

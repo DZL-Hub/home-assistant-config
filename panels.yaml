@@ -1,0 +1,16 @@
+###############################################################################
+#   @author         :   SchmittyD
+#   @created date   :   15/07/2024 (AEST)
+#   @edited date    :   10/08/2024 (AEST)
+#   @configuration  :   Configuration
+#   @description    :   Main configuration
+###############################################################################
+  - name: ha_system
+    sidebar_title: System Info
+    sidebar_icon: mdi:information-variant
+    js_url: /api/hassio/app/entrypoint.js
+    url_path: "hassio/system/info"
+    embed_iframe: true
+    require_admin: true
+    config:
+      ingress: core_configurator

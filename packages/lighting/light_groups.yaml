@@ -360,19 +360,19 @@ light:
       - light.downlights_external_porch
 
 ## Driveway Lights ##
-  - platform: group
-    name: Driveway Lights
-    unique_id: 5e83b5c7-7338-48b5-bfc6-05437fbf9541
-    all: true
-    entities:
-  #    - light.floodlights_external_driveway
+#  - platform: group
+#    name: Driveway Lights
+#    unique_id: 5e83b5c7-7338-48b5-bfc6-05437fbf9541
+#    all: true
+#    entities:
+#      - light.floodlights_external_driveway
 # Driveway Floodlights #
-  - platform: group
-    name: Driveway Floodlights
-    unique_id: e3e3535e-4f06-4b4c-af6d-201c47cf4888
-    all: true
-    entities:
-  #    - light.floodlight_external_driveway
+#  - platform: group
+#    name: Driveway Floodlights
+#    unique_id: e3e3535e-4f06-4b4c-af6d-201c47cf4888
+#   all: true
+#   entities:
+#      - light.floodlight_external_driveway
 
 ## Garage Lights ##
   - platform: group
@@ -390,23 +390,23 @@ light:
     all: true
     entities:
       - light.batten_external_garage
-# Garage Floodlights #
-  - platform: group
-    name: Garage Floodlights
-    unique_id: 8ad8a89b-29a1-4b3d-af91-a67b7b13806b
-    all: true
-    entities:
-  #    - light.floodlight_external_garage_1
-  #    - light.floodlight_external_garage_2
+## Garage Floodlights #
+#  - platform: group
+#    name: Garage Floodlights
+#    unique_id: 8ad8a89b-29a1-4b3d-af91-a67b7b13806b
+#    all: true
+#    entities:
+#      - light.floodlight_external_garage_1
+#      - light.floodlight_external_garage_2
 # Garage Strip Lights #
-  - platform: group
-    name: Garage Strip Lights
-    unique_id: 2943e00f-c094-4f1b-a6b1-5d45d1df4c97
-    all: true
-    entities:
-  #    - light.strip_external_garage_1
-  #    - light.strip_external_garage_2
-  #    - light.strip_external_garage_3
+#  - platform: group
+#    name: Garage Strip Lights
+#    unique_id: 2943e00f-c094-4f1b-a6b1-5d45d1df4c97
+#    all: true
+#    entities:
+#      - light.strip_external_garage_1
+#      - light.strip_external_garage_2
+#      - light.strip_external_garage_3
 
 #### Porch Lights ####
   - platform: group

@@ -45,7 +45,7 @@
 #  include_config_in_attributes: true  # Show all options as attributes on the switch in Home Assistant when set to true. Default:  📝
 
 ## External Main Zone Lighting ##
-- name: "Main Zone External Lighting" # You can rename your switch's display name in Home Assistant's UI.
+- name: "External Main Zone Lighting" # You can rename your switch's display name in Home Assistant's UI.
   lights: # List of light entity_ids to be controlled (may be empty). Default: [] 🌟
     - light.lights_external_zone_main
   interval: 90 # Frequency to adapt the lights, in seconds. Default: 90 🔄 Note: The interval is used only once when the config loads. A config change and restart are required.
