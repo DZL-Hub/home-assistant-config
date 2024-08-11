@@ -46,6 +46,7 @@
 
 ## External Main Zone Lighting ##
 - name: "External Main Zone Lighting" # You can rename your switch's display name in Home Assistant's UI.
+#  entity_id: adaptive_lighting_external_zone_main # Entity ID of integration
   lights: # List of light entity_ids to be controlled (may be empty). Default: [] 🌟
     - light.lights_external_zone_main
   interval: 90 # Frequency to adapt the lights, in seconds. Default: 90 🔄 Note: The interval is used only once when the config loads. A config change and restart are required.
@@ -70,7 +71,7 @@
   #min_sunset_time:   # Set the earliest virtual sunset time (HH:MM:SS), allowing for later sunsets. Default: None  🌇
   #max_sunset_time:   # Set the latest virtual sunset time (HH:MM:SS), allowing for earlier sunsets. Default: None  🌇
   sunset_offset: 00:30:00  # Adjust sunset time with a positive or negative offset in seconds or (HH:MM:SS). Default: 0 ⏰
-  take_over_control: false  # Disable Adaptive Lighting if another source calls light.turn_on while lights are on and being adapted. Note that this calls homeassistant.update_entity every interval! Default: True 🔒
+  take_over_control: true  # Disable Adaptive Lighting if another source calls light.turn_on while lights are on and being adapted. Note that this calls homeassistant.update_entity every interval! Default: True 🔒
   detect_non_ha_changes: false  # Detects and halts adaptations for non-light.turn_on state changes. Needs take_over_control enabled. Default: False 🕵️ Caution: ⚠️ Some lights might falsely indicate an 'on' state, which could result in lights turning on unexpectedly. Disable this feature if you encounter such issues.
   autoreset_control_seconds: 0  # Automatically reset the manual control after a number of seconds. Set to 0 to disable. Default: 0 ⏲️
   only_once: false  # Adapt lights only when they are turned on (true) or keep adapting them (false). Default: False 🔄
@@ -85,6 +86,7 @@
 
 ## Internal Living Zone Lighting ##
 - name: "Internal Living Zone Lighting" # You can rename your switch's display name in Home Assistant's UI.
+#  entity_id: adaptive_lighting_internal_zone_living # Entity ID of integration
   lights: # List of light entity_ids to be controlled (may be empty). Default: [] 🌟
     - light.lights_internal_zone_living
   interval: 90 # Frequency to adapt the lights, in seconds. Default: 90 🔄 Note: The interval is used only once when the config loads. A config change and restart are required.
@@ -109,7 +111,7 @@
   #min_sunset_time:   # Set the earliest virtual sunset time (HH:MM:SS), allowing for later sunsets. Default: None  🌇
   #max_sunset_time:   # Set the latest virtual sunset time (HH:MM:SS), allowing for earlier sunsets. Default: None  🌇
   sunset_offset: 02:00:00  # Adjust sunset time with a positive or negative offset in seconds or (HH:MM:SS). Default: 0 ⏰
-  take_over_control: false  # Disable Adaptive Lighting if another source calls light.turn_on while lights are on and being adapted. Note that this calls homeassistant.update_entity every interval! Default: True 🔒
+  take_over_control: true  # Disable Adaptive Lighting if another source calls light.turn_on while lights are on and being adapted. Note that this calls homeassistant.update_entity every interval! Default: True 🔒
   detect_non_ha_changes: false  # Detects and halts adaptations for non-light.turn_on state changes. Needs take_over_control enabled. Default: False 🕵️ Caution: ⚠️ Some lights might falsely indicate an 'on' state, which could result in lights turning on unexpectedly. Disable this feature if you encounter such issues.
   autoreset_control_seconds: 0  # Automatically reset the manual control after a number of seconds. Set to 0 to disable. Default: 0 ⏲️
   only_once: false  # Adapt lights only when they are turned on (true) or keep adapting them (false). Default: False 🔄
@@ -124,6 +126,7 @@
 
 ## Internal Utility Zone Lighting ##
 - name: "Internal Utility Zone" # You can rename your switch's display name in Home Assistant's UI.
+#  entity_id: adaptive_lighting_internal_zone_utility # Entity ID of integration
   lights: # List of light entity_ids to be controlled (may be empty). Default: [] 🌟
     - light.lights_internal_zone_utility
   interval: 90 # Frequency to adapt the lights, in seconds. Default: 90 🔄 Note: The interval is used only once when the config loads. A config change and restart are required.
@@ -148,7 +151,7 @@
   #min_sunset_time:   # Set the earliest virtual sunset time (HH:MM:SS), allowing for later sunsets. Default: None  🌇
   #max_sunset_time:   # Set the latest virtual sunset time (HH:MM:SS), allowing for earlier sunsets. Default: None  🌇
   sunset_offset: 00:30:00  # Adjust sunset time with a positive or negative offset in seconds or (HH:MM:SS). Default: 0 ⏰
-  take_over_control: false  # Disable Adaptive Lighting if another source calls light.turn_on while lights are on and being adapted. Note that this calls homeassistant.update_entity every interval! Default: True 🔒
+  take_over_control: true  # Disable Adaptive Lighting if another source calls light.turn_on while lights are on and being adapted. Note that this calls homeassistant.update_entity every interval! Default: True 🔒
   detect_non_ha_changes: false  # Detects and halts adaptations for non-light.turn_on state changes. Needs take_over_control enabled. Default: False 🕵️ Caution: ⚠️ Some lights might falsely indicate an 'on' state, which could result in lights turning on unexpectedly. Disable this feature if you encounter such issues.
   autoreset_control_seconds: 0  # Automatically reset the manual control after a number of seconds. Set to 0 to disable. Default: 0 ⏲️
   only_once: false  # Adapt lights only when they are turned on (true) or keep adapting them (false). Default: False 🔄

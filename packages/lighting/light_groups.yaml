@@ -92,12 +92,12 @@ light:
       - light.downlights_internal_zone_utility
   #    - light.strips_internal_zone_utility
 # Internal Utility Zone Downlights #
-#  - platform: group
-#    name: Internal Utility Zone Downlights
-#    unique_id: b2bb5111-7333-4793-8fc3-2d518b1b616b
-#    all: true
-#    entities:
-#      - light.downlight_internal_foyer_front
+  - platform: group
+    name: Internal Utility Zone Downlights
+    unique_id: b2bb5111-7333-4793-8fc3-2d518b1b616b
+    all: true
+    entities:
+      - light.downlight_internal_foyer_front
 #      - light.downlights_internal_toilet
 #      - light.downlights_internal_kitchen
 #      - light.downlights_internal_laundry
